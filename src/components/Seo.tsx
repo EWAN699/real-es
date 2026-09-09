@@ -1,5 +1,7 @@
 import { Head } from 'vite-react-ssg';
 
+import { SITE_ORIGIN } from '@/lib/structured-data';
+
 const SITE_NAME = 'קבוצת קיסר';
 
 /**
@@ -15,7 +17,12 @@ const SITE_NAME = 'קבוצת קיסר';
 export type SeoProps = {
   title: string;
   description: string;
-  /** Canonical path, e.g. `/management`. Omit on pages that should not be indexed. */
+  /**
+   * Canonical path, e.g. `/management`. Omit on pages that should not be
+   * indexed. The origin comes from `SITE_ORIGIN`, the same constant the
+   * JSON-LD uses — a canonical on one host and structured data on another
+   * splits the page's signals between two URLs.
+   */
   path?: string | undefined;
   noIndex?: boolean | undefined;
 };
@@ -28,7 +35,7 @@ export function Seo({ title, description, path, noIndex = false }: SeoProps) {
       <html lang="he" dir="rtl" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {path ? <link rel="canonical" href={`https://caesar.co.il${path}`} /> : null}
+      {path ? <link rel="canonical" href={`${SITE_ORIGIN}${path}`} /> : null}
       {noIndex ? <meta name="robots" content="noindex, follow" /> : null}
 
       <meta property="og:site_name" content={SITE_NAME} />

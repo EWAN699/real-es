@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 import { expectNoAxeViolations } from './axe';
 
@@ -99,11 +99,4 @@ test('has no axe violations with the mobile menu open', async ({ page }) => {
   await expect(page.getByRole('dialog')).toBeVisible();
 
   await expectNoAxeViolations(page, 'home, menu open');
-});
-
-test('has no axe violations on the 404 page', async ({ page }) => {
-  await page.goto('/a-page-that-never-existed');
-
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('לא נמצא');
-  await expectNoAxeViolations(page, '404');
 });

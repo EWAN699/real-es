@@ -94,7 +94,7 @@ export function Field({ label, hint, error, required = false, className, childre
 
 const controlClass =
   'w-full rounded-md border bg-stone-50 px-4 py-2.5 text-body text-ink-900 ' +
-  'placeholder:text-ink-400 transition-colors duration-200';
+  'placeholder:text-ink-600 transition-colors duration-200';
 
 function stateClass(invalid: boolean): string {
   return invalid ? 'border-brand-700 border-2' : 'border-stone-200 hover:border-ink-400';

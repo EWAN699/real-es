@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 /**
  * Keyboard operation, checked in a real browser.
@@ -37,22 +37,38 @@ test('every interactive element shows a focus ring', async ({ page }) => {
   expect(Number.parseFloat(outline?.width ?? '0')).toBeGreaterThan(0);
 });
 
-test('tab order runs through the header before the page content', async ({ page }) => {
-  const reached: string[] = [];
+test('tab order runs through the whole header before any page content', async ({ page }) => {
+  // DOM order is the tab order: no positive tabindex anywhere.
+  expect(await page.locator('[tabindex]:not([tabindex="-1"]):not([tabindex="0"])').count()).toBe(0);
 
-  for (let step = 0; step < 12; step += 1) {
+  const regions: string[] = [];
+
+  for (let step = 0; step < 25; step += 1) {
     await page.keyboard.press('Tab');
-    reached.push(
-      await page.evaluate(() => {
-        const active = document.activeElement as HTMLElement | null;
-        if (!active) return '';
-        return (active.getAttribute('aria-label') ?? active.textContent ?? '').trim();
-      }),
-    );
+
+    const region = await page.evaluate(() => {
+      const active = document.activeElement;
+      if (!(active instanceof HTMLElement)) return 'none';
+      if (active.matches('a[href="#main"]')) return 'skip';
+      if (active.closest('header')) return 'header';
+      if (active.closest('main')) return 'main';
+      if (active.closest('footer')) return 'footer';
+      return 'other';
+    });
+
+    regions.push(region);
+    if (region === 'main') break;
   }
 
-  // The wordmark is the first real destination after the skip link.
-  expect(reached.slice(0, 3).join(' | ')).toContain('קבוצת קיסר');
+  // The skip link first, then the whole header, then the page content — never a
+  // page control interleaved with the navigation, and nothing unaccounted for.
+  expect(regions[0]).toBe('skip');
+  expect(regions).toContain('main');
+  expect(new Set(regions.slice(0, regions.indexOf('main')))).toEqual(
+    new Set(['skip', 'header']),
+  );
+  // The wordmark is somewhere in that header run.
+  await expect(page.getByRole('banner').getByRole('link', { name: /קבוצת קיסר/ })).toBeVisible();
 });
 
 test('the mobile menu opens, traps focus and closes on Escape, without a pointer', async ({
