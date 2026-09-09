@@ -79,8 +79,11 @@ export function Component() {
                       to={`/testimonials/${testimonial.slug}`}
                       className="mt-2 block font-semibold text-brand-700 underline underline-offset-4 hover:text-ink-900"
                     >
+                      {/* Not "the full testimonial": some of these quotes are
+                          themselves partial until the client's export lands, and
+                          the link must not promise more than the page holds. */}
                       <span className="sr-only">{testimonial.author}: </span>
-                      להמלצה המלאה
+                      לעמוד ההמלצה
                     </Link>
                   </figcaption>
                 </figure>

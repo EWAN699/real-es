@@ -1,4 +1,4 @@
-import { expect, test } from './fixtures';
+import { expect, test, waitForHydration } from './fixtures';
 
 import { expectNoAxeViolations } from './axe';
 
@@ -87,6 +87,22 @@ test('loads no third-party script or iframe on first paint', async ({ page }) =>
   expect(external.iframes).toBe(0);
 });
 
+test('publishes the organisation as structured data, and invents no rating', async ({
+  request,
+}) => {
+  const html = await (await request.get('/')).text();
+
+  const match = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/);
+  expect(match, 'no JSON-LD block in the prerendered homepage').not.toBeNull();
+
+  const node = JSON.parse(match?.[1] ?? '{}') as Record<string, unknown>;
+  expect(node['@type']).toContain('RealEstateAgent');
+
+  // The legacy counters put a "69" next to a testimonial stating 9.6. Neither
+  // is a verified rating, so no rating is claimed at all.
+  expect(html).not.toContain('aggregateRating');
+});
+
 test('has no axe violations', async ({ page }) => {
   await expectNoAxeViolations(page, 'home');
 });
@@ -94,6 +110,9 @@ test('has no axe violations', async ({ page }) => {
 test('has no axe violations with the mobile menu open', async ({ page }) => {
   const toggle = page.getByRole('button', { name: 'תפריט', exact: true });
   if (!(await toggle.isVisible())) test.skip();
+
+  // The panel is mounted by the client, so it cannot open before hydration.
+  await waitForHydration(page);
 
   await toggle.click();
   await expect(page.getByRole('dialog')).toBeVisible();

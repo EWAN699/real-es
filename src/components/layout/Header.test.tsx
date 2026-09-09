@@ -167,9 +167,24 @@ describe('mobile menu', () => {
     expect(overlay).not.toHaveAttribute('inert');
     expect(dialog).not.toHaveAttribute('inert');
 
+    /*
+     * The page must be released from inert BEFORE focus is handed back to the
+     * toggle. `focus()` on an element inside an inert subtree is silently
+     * ignored by a real browser, so getting this order wrong drops focus to
+     * <body> on close — invisible in jsdom, which does not enforce inert, so
+     * the ordering itself is what is asserted here.
+     */
+    let inertWhenRestored = -1;
+    toggle().addEventListener('focus', () => {
+      inertWhenRestored = document.querySelectorAll('[inert]').length;
+    });
+
     await userEvent.keyboard('{Escape}');
+
+    expect(inertWhenRestored).toBe(0);
     expect(pageContent).not.toHaveAttribute('inert');
     expect(document.querySelectorAll('[inert]')).toHaveLength(0);
+    expect(toggle()).toHaveFocus();
   });
 
   it('locks the page behind it from scrolling, and unlocks on close', async () => {

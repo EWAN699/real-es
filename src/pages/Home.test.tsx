@@ -9,6 +9,7 @@ import { Component as Home } from './Home';
 // The document head is set through vite-react-ssg's <Head>, which needs the
 // HelmetProvider the SSG runtime installs. It is not what this file is testing.
 vi.mock('@/components/Seo', () => ({ Seo: () => null }));
+vi.mock('@/components/JsonLd', () => ({ JsonLd: () => null }));
 
 function renderHome() {
   return render(

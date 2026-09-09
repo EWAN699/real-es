@@ -1,4 +1,4 @@
-import { expect, test } from './fixtures';
+import { expect, test, waitForHydration } from './fixtures';
 
 /**
  * Keyboard operation, checked in a real browser.
@@ -9,6 +9,10 @@ import { expect, test } from './fixtures';
  */
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
+  // Everything below drives a control. The page is prerendered, so a keypress
+  // that lands before React has attached its handlers is simply lost — a flake
+  // that says nothing about the behaviour being tested.
+  await waitForHydration(page);
 });
 
 test('the first Tab reaches a skip link that jumps to the main landmark', async ({ page }) => {

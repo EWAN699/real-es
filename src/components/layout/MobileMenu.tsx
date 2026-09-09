@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/components/ui/cn';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { useFocusTrap } from '@/hooks/useFocusTrap';
-import { useInertBackground } from '@/hooks/useInertBackground';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import { contact, telHref } from '@/content/contact';
@@ -36,14 +35,13 @@ export type MobileMenuProps = {
 };
 
 export function MobileMenu({ open, onClose, id }: MobileMenuProps) {
-  const panelRef = useFocusTrap<HTMLDivElement>(open);
   const overlayRef = useRef<HTMLDivElement>(null);
+  // The overlay, not the panel: the scrim lives inside it and stays clickable.
+  const panelRef = useFocusTrap<HTMLDivElement>(open, overlayRef);
   const location = useLocation();
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   useBodyScrollLock(open);
-  // The overlay, not the panel: the scrim is inside it and stays clickable.
-  useInertBackground(open, overlayRef);
 
   useEffect(() => {
     if (!open) return;

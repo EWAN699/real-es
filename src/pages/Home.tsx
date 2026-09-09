@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { contact, telHref } from '@/content/contact';
 import { divisionNav } from '@/components/layout/nav';
+import { JsonLd } from '@/components/JsonLd';
 import { Seo } from '@/components/Seo';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
@@ -11,6 +12,7 @@ import { MediaImage } from '@/components/ui/MediaImage';
 import { Prose } from '@/components/ui/Prose';
 import { Reveal } from '@/components/ui/Reveal';
 import { Section } from '@/components/ui/Section';
+import { buildOrganization } from '@/lib/structured-data';
 
 /**
  * Home.
@@ -38,6 +40,14 @@ export function Component() {
         description="קבוצת קיסר — ניהול נכסים, בנייה ויזמות ועסקים והשקעות. 100% שירות, 0% עמלות."
         path="/"
       />
+      {/*
+       * The organisation node lives on the homepage, which is the entity's own
+       * URL; every other page's structured data references it by `@id` rather
+       * than repeating it. It carries no aggregateRating: the only two numbers
+       * the legacy site published contradict each other, and a fabricated
+       * rating is what earns a manual action.
+       */}
+      <JsonLd data={buildOrganization()} />
 
       <Hero />
       <Divisions />
