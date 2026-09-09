@@ -1,0 +1,13 @@
+<!--
+  TEMPORARY placeholder favicon.
+
+  Matches the placeholder mark in src/components/layout/Logo.tsx: brand green
+  with the Hebrew initial. Replace this and Logo.tsx together when the real
+  CAESAR roof/arrow logo arrives as SVG — they are the only two files that
+  carry the mark.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="קבוצת קיסר">
+  <rect width="64" height="64" rx="14" fill="#8CC542"/>
+  <text x="32" y="46" font-family="Arial Hebrew, Arial, sans-serif" font-size="40"
+        font-weight="700" text-anchor="middle" fill="#14171A">ק</text>
+</svg>
