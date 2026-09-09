@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/components/ui/cn';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { useFocusTrap } from '@/hooks/useFocusTrap';
+import { useInertBackground } from '@/hooks/useInertBackground';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import { contact, telHref } from '@/content/contact';
@@ -21,6 +22,11 @@ import { editorialNav, primaryNav } from './nav';
  * It also closes on navigation and when the viewport grows past the breakpoint
  * where the desktop nav takes over — otherwise a rotated phone leaves an
  * invisible modal holding the keyboard hostage.
+ *
+ * The page behind it is made `inert` for as long as it is open. The focus trap
+ * holds the Tab key, but a screen reader's virtual cursor ignores Tab entirely,
+ * so without `inert` the whole site is still readable — and clickable — behind
+ * a panel the user cannot see.
  */
 export type MobileMenuProps = {
   open: boolean;
@@ -31,10 +37,13 @@ export type MobileMenuProps = {
 
 export function MobileMenu({ open, onClose, id }: MobileMenuProps) {
   const panelRef = useFocusTrap<HTMLDivElement>(open);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   useBodyScrollLock(open);
+  // The overlay, not the panel: the scrim is inside it and stays clickable.
+  useInertBackground(open, overlayRef);
 
   useEffect(() => {
     if (!open) return;
@@ -65,7 +74,7 @@ export function MobileMenu({ open, onClose, id }: MobileMenuProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div ref={overlayRef} className="fixed inset-0 z-50 lg:hidden">
       {/*
        * The scrim is a pointer convenience, not a control: it duplicates the
        * close button in the panel, so it is taken out of the accessibility tree
