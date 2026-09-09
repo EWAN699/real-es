@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { useRouteFocus } from '@/hooks/useRouteFocus';
@@ -11,6 +11,14 @@ import { WhatsAppCta } from './WhatsAppCta';
  * The shell every page renders inside: skip link, header, one `<main>`, footer,
  * and the persistent WhatsApp affordance.
  *
+ * It also stamps `data-hydrated` on the document once the client has taken over.
+ * Every page is prerendered, so there is a window in which the markup is on
+ * screen and interactive controls — the listings filters, the lead form — are
+ * not yet wired. That window is real for visitors too (their clicks are simply
+ * lost), which is why the page never depends on script to show its content; the
+ * attribute makes the moment observable, and the end-to-end suite waits for it
+ * before driving anything that only works after hydration.
+ *
  * Deliberately imports no motion library. This component is in the entry chunk,
  * so anything it pulls in is downloaded before first paint on every page —
  * including the pages that never animate. `Reveal` reads `prefers-reduced-motion`
@@ -20,6 +28,10 @@ import { WhatsAppCta } from './WhatsAppCta';
 export function RootLayout() {
   const mainRef = useRef<HTMLElement>(null);
   useRouteFocus(mainRef);
+
+  useEffect(() => {
+    document.documentElement.dataset.hydrated = 'true';
+  }, []);
 
   return (
     <>

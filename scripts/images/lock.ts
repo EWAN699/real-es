@@ -95,8 +95,23 @@ export async function writeLock(lockPath: string, lock: Lock): Promise<void> {
     ),
   };
 
+  // A run that generated nothing must leave no diff, so the timestamp only moves
+  // when something else did.
+  const previous = await readFile(lockPath, 'utf8').catch(() => '');
+  if (previous && sameIgnoringTimestamp(previous, next)) return;
+
   await mkdir(path.dirname(lockPath), { recursive: true });
   await writeFile(lockPath, `${JSON.stringify(next, null, 2)}\n`);
+}
+
+function sameIgnoringTimestamp(previous: string, next: Lock): boolean {
+  try {
+    const { updatedAt: _previousAt, ...rest } = JSON.parse(previous) as Lock;
+    const { updatedAt: _nextAt, ...candidate } = next;
+    return JSON.stringify(rest) === JSON.stringify(candidate);
+  } catch {
+    return false;
+  }
 }
 
 /**

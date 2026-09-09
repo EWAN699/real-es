@@ -18,6 +18,23 @@ async function stubWebFonts(page: Page) {
   await page.route(/fonts\.(googleapis|gstatic)\.com/, (route) => route.abort());
 }
 
+/**
+ * Wait until the client has taken over the prerendered markup.
+ *
+ * Every page arrives as static HTML, so a control can be on screen and visible
+ * a moment before React has attached its handlers. A click in that window is
+ * genuinely lost — the filter does not filter, the form does the browser's own
+ * GET submit — and in a parallel run it is lost often enough to make any test
+ * that drives a control flaky for a reason that has nothing to do with the code
+ * under test. `RootLayout` stamps `data-hydrated` in its first effect.
+ *
+ * Only for tests that interact. Tests about what the page *shows* must not wait
+ * for script: that is the point of prerendering it.
+ */
+export async function waitForHydration(page: Page) {
+  await page.waitForFunction(() => document.documentElement.dataset.hydrated === 'true');
+}
+
 export const test = base.extend({
   // Playwright names this second argument `use`; renamed here because eslint's
   // react-hooks rule reads any call to `use()` as the React hook.

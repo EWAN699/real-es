@@ -145,6 +145,33 @@ describe('mobile menu', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
+  it('makes everything outside the panel inert, so a virtual cursor cannot browse behind it', async () => {
+    await userEvent.click(toggle());
+
+    const dialog = screen.getByRole('dialog');
+    const overlay = dialog.parentElement;
+    expect(overlay).not.toBeNull();
+
+    // A focus trap only holds the Tab key. A screen reader's virtual cursor
+    // ignores Tab, so without `inert` the whole page behind the panel is still
+    // readable and clickable. React 18 has no `inert` prop; it is set on the DOM.
+    // The routed page content, which is a sibling of the header.
+    const pageContent = screen.getByText('דף הבית');
+    expect(pageContent).toHaveAttribute('inert');
+
+    // And the header's own bar, which the panel is rendered alongside.
+    const headerBar = screen.getByRole('navigation', { name: 'ניווט ראשי' }).closest('div');
+    expect(headerBar?.closest('[inert]')).not.toBeNull();
+
+    // The overlay itself, and the panel inside it, stay live.
+    expect(overlay).not.toHaveAttribute('inert');
+    expect(dialog).not.toHaveAttribute('inert');
+
+    await userEvent.keyboard('{Escape}');
+    expect(pageContent).not.toHaveAttribute('inert');
+    expect(document.querySelectorAll('[inert]')).toHaveLength(0);
+  });
+
   it('locks the page behind it from scrolling, and unlocks on close', async () => {
     await userEvent.click(toggle());
     expect(document.body.style.overflow).toBe('hidden');

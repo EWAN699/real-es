@@ -34,17 +34,31 @@ runtime never holds Kling credentials and visitors never wait on a model.
 
 ```bash
 cp .env.example .env.local     # add KLING_ACCESS_KEY and KLING_SECRET_KEY
-npm run images:generate        # generate everything missing from the manifest
-npm run images:generate -- --only hero-villa-dusk   # regenerate one slot
-npm run images:generate -- --mock                   # full pipeline, no network
+npm run images:generate -- --dry-run                     # the plan and its cost, no writes
+npm run images:generate                                  # everything the lock says is missing
+npm run images:generate -- --only hero-tel-aviv-skyline  # regenerate one slot
+npm run images:generate -- --mock                        # full pipeline, no network
 ```
 
-The pipeline is idempotent: it hashes each prompt and skips anything already produced, so
-re-running is cheap and safe.
+Every slot lives in `content/images.manifest.ts`: subject, negative prompt, aspect, count and
+hand-written Hebrew alt text, with one shared house style appended to every prompt so the set
+reads as a single commissioned shoot. The pipeline hashes prompt and parameters and skips
+anything already produced, so re-running is cheap and safe; `public/media/manifest.lock.json`
+records the hash, model, timestamp and estimated cost per slot.
 
-> **Note.** `api.klingai.com` is blocked by the egress proxy in the Claude Code remote
+International Kling accounts authenticate against `https://api-singapore.klingai.com`, which
+is the default in `scripts/images/config.ts`; mainland accounts set `KLING_API_BASE` to
+`https://api.klingai.com`. Model names move between releases — check the model registry in
+that file before a paid run.
+
+> **Note.** Every Kling host is blocked by the egress proxy in the Claude Code remote
 > environment, so real generation must run on a machine with access. `--mock` exercises the
-> entire pipeline against recorded fixtures and is what CI uses.
+> entire pipeline — submit, poll, download, sharp, registry rewrite, lock file — against
+> recorded fixtures, and is what CI uses.
+>
+> **The images in `public/media` today are mock placeholders**, flat warm gradients produced
+> by that offline vendor; every one is marked `"mock": true` in the lock file. The first real
+> run replaces all of them automatically — a mock entry never satisfies a real run.
 
 `KLING_ACCESS_KEY` and `KLING_SECRET_KEY` must **never** carry a `VITE_` prefix — Vite
 inlines any `VITE_*` value into the client bundle. An eslint rule and a CI grep enforce it.
