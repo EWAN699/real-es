@@ -18,6 +18,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 
 import { redirects, isKnownRoute } from '../../src/lib/redirects';
+import { verifyDestinations } from './verify-destinations';
 
 const DIST = 'dist';
 const BASE = process.env.PAGES_BASE ?? '/';
@@ -66,3 +67,5 @@ for (const [from, to] of redirects) {
 
 console.log(`pages: 404.html written`);
 console.log(`pages: ${written} legacy redirect stubs written, ${skipped} skipped as real routes`);
+
+verifyDestinations();

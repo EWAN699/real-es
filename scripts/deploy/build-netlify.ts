@@ -9,6 +9,7 @@ import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { redirectRules, isKnownRoute, normalizePath } from '../../src/lib/redirects';
+import { verifyDestinations } from './verify-destinations';
 
 const rules = redirectRules().filter((rule) => !isKnownRoute(normalizePath(rule.source)));
 
@@ -25,3 +26,5 @@ const lines = [
 
 await writeFile(join('dist', '_redirects'), lines, 'utf8');
 console.log(`netlify: _redirects written with ${rules.length} permanent redirects`);
+
+verifyDestinations();

@@ -34,16 +34,16 @@ import { testimonialLegacyPaths } from '@/content/testimonials';
 export const SITE_ROUTES = [
   '/',
   '/about',
-  '/about/ceo',
-  '/about/press',
-  '/franchise',
-  '/careers',
+  '/management',
+  '/construction',
+  '/investment',
   '/contact',
   '/listings',
-  '/projects',
   '/testimonials',
   '/blog',
   '/news',
+  '/accessibility',
+  '/privacy',
 ] as const;
 
 /** Route patterns whose targets are validated against their content module. */
@@ -68,11 +68,11 @@ const PAGE_REDIRECTS: Readonly<Record<string, string>> = {
   // The about section. Its WordPress parent slug was itself a keyword string:
   // "קבוצת קיסר ניהול נכסים פתרונות בניה וע…", truncated mid-word by WordPress.
   '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/': '/about',
-  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/דבר-המנכל/': '/about/ceo',
+  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/דבר-המנכל/': '/about#ceo',
   // Labelled "קיסר בתקשורת" in the navigation, despite the slug.
-  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/שיווק-ניהול-נכסים-מסחריים/': '/about/press',
-  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/agents/': '/franchise',
-  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/דרושים/': '/careers',
+  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/שיווק-ניהול-נכסים-מסחריים/': '/about#press',
+  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/agents/': '/contact',
+  '/קבוצת-קיסר-ניהול-נכסים-פתרונות-בניה-וע/דרושים/': '/contact',
 
   '/צור-קשר/': '/contact',
 
@@ -81,8 +81,8 @@ const PAGE_REDIRECTS: Readonly<Record<string, string>> = {
   // "נכס החודש" was a rotating featured property, not a page of its own.
   '/ניהול-נכסים-ניהול-נכסים/ניהול-נכסים-נכס-החודש/': '/listings',
 
-  '/נדלן-בניה-ניהול-יזמות/פרויקטים/': '/projects',
-  '/נדלן-בניה-ניהול-יזמות/פרוייקט-החודש/': '/projects',
+  '/נדלן-בניה-ניהול-יזמות/פרויקטים/': '/construction',
+  '/נדלן-בניה-ניהול-יזמות/פרוייקט-החודש/': '/construction',
 
   '/category/בלוג/': '/blog',
   '/category/מה-חדש/': '/news',
@@ -212,7 +212,8 @@ export function encodePath(path: string): string {
 
 /** Is this one of the paths the map is allowed to target? */
 export function isKnownRoute(path: string): boolean {
-  const [pathname] = path.split('?') as [string, ...string[]];
+  // Strip both query and fragment: '/about#ceo' targets the '/about' page.
+  const [pathname] = path.split(/[?#]/) as [string, ...string[]];
   if ((SITE_ROUTES as readonly string[]).includes(pathname)) return true;
   return DYNAMIC_PREFIXES.some(
     (prefix) => pathname.startsWith(prefix) && pathname.length > prefix.length,
