@@ -80,4 +80,24 @@ client bundle, which would publish the secret.
 | --- | --- |
 | `RESEND_API_KEY` | `/api/lead` |
 | `LEAD_NOTIFY_EMAIL` | `/api/lead` |
+| `LEAD_FROM_EMAIL` | `/api/lead` — optional. The notification's `From`, which must be an address on a domain verified with Resend. Defaults to `קבוצת קיסר <leads@caesar.co.il>`. |
 | `KLING_ACCESS_KEY` / `KLING_SECRET_KEY` | `scripts/images/*` only, never a serverless function |
+
+### Implementation notes
+
+Nothing above changed; these record how the frozen contract is met.
+
+- Delivery calls Resend's REST API (`POST https://api.resend.com/emails`) over
+  `fetch` rather than through the SDK. One HTTP call does not warrant a
+  dependency in a serverless function.
+- The rate limiter is an in-memory sliding window, so the ceiling is 5 per
+  instance per 10 minutes rather than 5 globally. That stops form-spam scripts
+  and is not represented as a security control; a shared store (Vercel KV,
+  Upstash) is the upgrade path if this endpoint ever needs one.
+- A request with a method other than `POST` gets `405`
+  `{ "ok": false, "error": "method_not_allowed" }` with an `Allow: POST` header.
+  A body that is not valid JSON gets the documented `400` shape with the error
+  under the `form` key.
+- The handler is a standard `Request` → `Response` function, exported as the
+  module default and constructible via `createLeadHandler({ send, now, store })`
+  so the delivery, clock and rate-limit store can be injected in tests.
