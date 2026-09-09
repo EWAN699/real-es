@@ -41,10 +41,305 @@ const PLACEHOLDER_PIXEL =
   'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDMiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjMiIGZpbGw9IiNFN0U0REQiLz48L3N2Zz4=';
 
 /**
- * Generated block. Everything below is rewritten by the image pipeline.
+ * Generated block. Everything between the markers is rewritten by the image
+ * pipeline from `content/images.manifest.ts` plus `public/media/manifest.lock.json`.
  * Hand edits here will be overwritten — change the manifest instead.
  */
-export const assets: Record<string, MediaAsset> = {};
+/* GENERATED:assets — rewritten by `npm run images:generate`. Do not edit by hand. */
+export const assets: Record<string, MediaAsset> = {
+  'about-lobby-consultation': {
+    slug: 'about-lobby-consultation',
+    alt: 'שני אנשים משוחחים סביב שולחן בלובי מואר של בניין מגורים',
+    aspect: '16:9',
+    src: '/media/about-lobby-consultation-1280.avif',
+    fallback: '/media/about-lobby-consultation-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAwCdASoUAAsAPwlusE+rpiSiMAgBcCEJZQCdACHU6BQA/tQE3JMIe89uX/oEzkC8hvHNZ6AAAA==',
+    aiGenerated: true,
+  },
+  'blog-editorial-desk': {
+    slug: 'blog-editorial-desk',
+    alt: 'פינת עבודה מוארת ליד חלון, עם מחשב נייד סגור, מחברת וכוס',
+    aspect: '16:9',
+    src: '/media/blog-editorial-desk-1280.avif',
+    fallback: '/media/blog-editorial-desk-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAABwAwCdASoUAAsAPwlur0+rpiQiMAgBcCEJQBOgBDrpsY+iAqAA/ucVi3nJJMejTH5D7WQ4iZNtcoAA',
+    aiGenerated: true,
+  },
+  'city-haifa-bay': {
+    slug: 'city-haifa-bay',
+    alt: 'מדרון הכרמל בחיפה עם בתים מדורגים בין עצי אורן ומפרץ הים למטה',
+    aspect: '16:9',
+    src: '/media/city-haifa-bay-1280.avif',
+    fallback: '/media/city-haifa-bay-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAwCdASoUAAsAPwlwr0+rpqQiMAgBcCEJYwCw7CHFP9AA/t9A5gheNq5P1fp3FFdD7wfLo0l6/Uf6ZWSzgAAA',
+    aiGenerated: true,
+  },
+  'city-herzliya-marina': {
+    slug: 'city-herzliya-marina',
+    alt: 'מרינה עם סירות עוגנות ובנייני מגורים לבנים ומדורגים ברקע',
+    aspect: '16:9',
+    src: '/media/city-herzliya-marina-1280.avif',
+    fallback: '/media/city-herzliya-marina-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAwCdASoUAAsAPwlwsFArpqSisAgBcCEJQBYja5A6JCSYpWR4AP7nX67SeuKMCcymGqZS0SBE9/15YAA=',
+    aiGenerated: true,
+  },
+  'city-jerusalem-stone': {
+    slug: 'city-jerusalem-stone',
+    alt: 'רחוב מגורים מדרוני בירושלים, עם בנייני אבן ועצי ברוש',
+    aspect: '16:9',
+    src: '/media/city-jerusalem-stone-1280.avif',
+    fallback: '/media/city-jerusalem-stone-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAwCdASoUAAsAPwlur0+rpiQiMAgBcCEJZQCdACHXUtOmJ9JEAAD+00apYnnee3KFolxBoQAAAA==',
+    aiGenerated: true,
+  },
+  'city-ramat-gan-towers': {
+    slug: 'city-ramat-gan-towers',
+    alt: 'מגדלים גבוהים מתנשאים מעל שכונת מגורים ותיקה, במבט מהפארק',
+    aspect: '16:9',
+    src: '/media/city-ramat-gan-towers-1280.avif',
+    fallback: '/media/city-ramat-gan-towers-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAAsAPwlys1CrpqSisAgBcCEJZQC06CHVfncAAP6wdQxU2lBBelsima8Qj0kGkw4AAA==',
+    aiGenerated: true,
+  },
+  'city-tel-aviv-boulevard': {
+    slug: 'city-tel-aviv-boulevard',
+    alt: 'שדרה מוצלת בתל אביב עם עצי פיקוס ומרפסות בסגנון באוהאוס',
+    aspect: '16:9',
+    src: '/media/city-tel-aviv-boulevard-1280.avif',
+    fallback: '/media/city-tel-aviv-boulevard-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAAsAPwlwsFArpqSisAgBcCEJQBOgBDqjgvQA/uca5tR1xY5vB1nS1bNPi8vA7bnC/AAA',
+    aiGenerated: true,
+  },
+  'cta-evening-balcony': {
+    slug: 'cta-evening-balcony',
+    alt: 'מרפסת דירה בשעת דמדומים, עם אור חם מבפנים ועציצים על המעקה',
+    aspect: '16:9',
+    src: '/media/cta-evening-balcony-1280.avif',
+    fallback: '/media/cta-evening-balcony-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAAsAPwlwr0+rpqQiMAgBcCEJYwCdACHXTYx9EBUAAP7eh8DNn6D4s3Wq93T5nNP2AA==',
+    aiGenerated: true,
+  },
+  'divider-palms-dusk': {
+    slug: 'divider-palms-dusk',
+    alt: '',
+    aspect: '21:9',
+    src: '/media/divider-palms-dusk-1600.avif',
+    fallback: '/media/divider-palms-dusk-1600.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAAkAPwlysFArpySisAgBcCEJZQCdAC0H3xQAAP7lzv7ruR8+FTxeYcPDvehKPdGIAAAA',
+    aiGenerated: true,
+  },
+  'division-construction': {
+    slug: 'division-construction',
+    alt: 'בניין מגורים בשלבי בנייה מאחורי פיגומים, עם זרוע עגורן מעליו',
+    aspect: '16:9',
+    src: '/media/division-construction-1280.avif',
+    fallback: '/media/division-construction-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABwAwCdASoUAAsAPwl0s1CrpySisAgBcCEJZQC2yCHU4KRFMwAA/sNBSAJax8btVjM0AAAA',
+    aiGenerated: true,
+  },
+  'division-investment': {
+    slug: 'division-investment',
+    alt: 'חדר ישיבות מואר מעל העיר, עם דגם אדריכלי לבן של מבנה מגורים על השולחן',
+    aspect: '16:9',
+    src: '/media/division-investment-1280.avif',
+    fallback: '/media/division-investment-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAwCdASoUAAsAPwlwr0+rpqQiMAgBcCEJYwCw7CHFP9AA/t9A5gheNq5P1fp3FFdD7wfLo0l6/Uf6ZWSzgAAA',
+    aiGenerated: true,
+  },
+  'division-management': {
+    slug: 'division-management',
+    alt: 'חצר כניסה מטופחת של בניין מגורים, עם דלתות זכוכית וצמחייה גזומה',
+    aspect: '16:9',
+    src: '/media/division-management-1280.avif',
+    fallback: '/media/division-management-1280.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAAsAPwlurk+rpiQiMAgBcCEJZQCdACHXVvUodegAAP7TG0OWk4paB6mb27JnAzAAAA==',
+    aiGenerated: true,
+  },
+  'fallback-city-generic': {
+    slug: 'fallback-city-generic',
+    alt: 'מבט כללי על קו הרקיע של גוש דן — תמונת אווירה, לא תצלום של נכס מסוים',
+    aspect: '4:3',
+    src: '/media/fallback-city-generic-960.avif',
+    fallback: '/media/fallback-city-generic-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA8APwl0sFCrpySisAgBcCEJZWVuWIeWGkAA/uTZ/3QEbgh6Mg8ZEf4p2wkiaxI0sAAA',
+    aiGenerated: true,
+  },
+  'hero-coastal-towers': {
+    slug: 'hero-coastal-towers',
+    alt: 'טיילת חוף שקטה עם דקלים ובנייני מגורים לבנים ברקע',
+    aspect: '21:9',
+    src: '/media/hero-coastal-towers-1600.avif',
+    fallback: '/media/hero-coastal-towers-1600.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAwAwCdASoUAAkAPwlurk+rpiQiMAgBcCEJZQCdACHXYLBUAP7TCMd2VJbVWJwM8mXogAAA',
+    aiGenerated: true,
+  },
+  'hero-tel-aviv-skyline': {
+    slug: 'hero-tel-aviv-skyline',
+    alt: 'מבט ממרפסת גבוהה במרכז תל אביב על מבני המגורים, המגדלים והים באור אחר הצהריים',
+    aspect: '4:3',
+    src: '/media/hero-tel-aviv-skyline-960.avif',
+    fallback: '/media/hero-tel-aviv-skyline-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoUAA8APwlur0+rpiQiMAgBcCEJYwC06C5JAAD+6k+/ugI3EdLg6h/E6l71yeLzQjNG4SpQVgA=',
+    focal: [50, 40],
+    aiGenerated: true,
+  },
+  'service-asset-improvement': {
+    slug: 'service-asset-improvement',
+    alt: 'חזית דירה משופצת בין שתי חזיתות ישנות באותו בניין',
+    aspect: '4:3',
+    src: '/media/service-asset-improvement-960.avif',
+    fallback: '/media/service-asset-improvement-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAwAwCdASoUAA8APwlwr0+/pqQiMAgD8CEJZQC/ODKKxbF4AP7mqH81tnPACO+zZfVQzQoAAAA=',
+    aiGenerated: true,
+  },
+  'service-commercial-management': {
+    slug: 'service-commercial-management',
+    alt: 'מסדרון מרכז מסחרי לפני שעת הפתיחה, עם אור יום מהתקרה',
+    aspect: '4:3',
+    src: '/media/service-commercial-management-960.avif',
+    fallback: '/media/service-commercial-management-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAwCdASoUAA8APwlurk+rpiQiMAgBcCEJQBOmUACQ4AAA/uz5j5QVy6uLzEkiY1Pzww1Ovi80Iy4lvSiIAA==',
+    aiGenerated: true,
+  },
+  'service-investor-portfolio': {
+    slug: 'service-investor-portfolio',
+    alt: 'רחוב מגורים שקט עם שורת בניינים בני ארבע קומות באור ערב',
+    aspect: '4:3',
+    src: '/media/service-investor-portfolio-960.avif',
+    fallback: '/media/service-investor-portfolio-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAgCdASoUAA8APwlwrk+/pqQiMAgD8CEJYwCdAC5JAAD+7Bk/vAI8PAHxkXEUeuiMeL2kQxEX5fDcggAAAA==',
+    aiGenerated: true,
+  },
+  'service-new-projects': {
+    slug: 'service-new-projects',
+    alt: 'פרויקט מגורים חדש שהושלם, לפני אכלוס',
+    aspect: '4:3',
+    src: '/media/service-new-projects-960.avif',
+    fallback: '/media/service-new-projects-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAwCdASoUAA8APwlwsFArpqSisAgBcCEJQBOgBDrrqNMJQ4JMAP7nGrlRoXIaNQo9U+WkvJxpLwkEAAA=',
+    aiGenerated: true,
+  },
+  'service-purchase-groups': {
+    slug: 'service-purchase-groups',
+    alt: 'מגרש ריק ומגודר בעיר, מוכן לבנייה, מוקף בבנייני מגורים',
+    aspect: '4:3',
+    src: '/media/service-purchase-groups-960.avif',
+    fallback: '/media/service-purchase-groups-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAABQAwCdASoUAA8APwlysVArpqSisAgBcCEJZQCw7C0HyDWWOAD+6LqfugI3EdLg6hPNGe394qxQAAAA',
+    aiGenerated: true,
+  },
+  'service-relocation': {
+    slug: 'service-relocation',
+    alt: 'דירה ריקה ביום מעבר, עם ארגזים סגורים וחלונות פתוחים',
+    aspect: '4:3',
+    src: '/media/service-relocation-960.avif',
+    fallback: '/media/service-relocation-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAgCdASoUAA8APwlwr1ArpqQmsAgBcCEJQBYdhckgAP7sYj/VLjl7cXmIPN4Os+YFldtqfHFw5mwAAAA=',
+    aiGenerated: true,
+  },
+  'service-renovation': {
+    slug: 'service-renovation',
+    alt: 'דירה בשלבי שיפוץ, עם טיח חדש, פלס וערימת אריחים',
+    aspect: '4:3',
+    src: '/media/service-renovation-960.avif',
+    fallback: '/media/service-renovation-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAwAwCdASoUAA8APwlurk+/piQiMAgD8CEJZQCw7C0Hmq4gAP7pTj94BHhymaz1KfVOXR+QAAA=',
+    aiGenerated: true,
+  },
+  'service-rental-management': {
+    slug: 'service-rental-management',
+    alt: 'דירה ריקה ומוכנה לכניסת שוכר, עם צרור מפתחות על משטח המטבח',
+    aspect: '4:3',
+    src: '/media/service-rental-management-960.avif',
+    fallback: '/media/service-rental-management-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABwAwCdASoUAA8APwlwsE+rpqSiMAgBcCEJZQC7ACHU4KRGcOAA/tMIANaUOSkmHDPZcEB1gAA=',
+    aiGenerated: true,
+  },
+  'service-sales-marketing': {
+    slug: 'service-sales-marketing',
+    alt: 'סלון מואר ומרוהט בפשטות בדירה שהוכנה למכירה',
+    aspect: '4:3',
+    src: '/media/service-sales-marketing-960.avif',
+    fallback: '/media/service-sales-marketing-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAgCdASoUAA8APwlurk+rpiQiMAgBcCEJQBYdhc/QAP7sr0/BqD7P0uDqPpLpc1uYGRZHtZfF5eWlgsS8AA==',
+    aiGenerated: true,
+  },
+  'service-tama-38': {
+    slug: 'service-tama-38',
+    alt: 'בניין ותיק שמתחזקים ומרחיבים, עם מרפסות חדשות ופיגומים בצדו',
+    aspect: '4:3',
+    src: '/media/service-tama-38-960.avif',
+    fallback: '/media/service-tama-38-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAgCdASoUAA8APwlwr1ArpqQisAgBcCEJYwC06C5JAAD+636/e3/5dXF5iItSBLPw4fF5qvCloyp7fgAAAA==',
+    aiGenerated: true,
+  },
+  'service-urban-renewal': {
+    slug: 'service-urban-renewal',
+    alt: 'בניין ותיק בן ארבע קומות לצד בניין חדש וגבוה יותר באותו רחוב',
+    aspect: '4:3',
+    src: '/media/service-urban-renewal-960.avif',
+    fallback: '/media/service-urban-renewal-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAABwAwCdASoUAA8APwlurk+rpiQiMAgBcCEJYwC06C0HyKYkX8AA/ulOP78RI/Z+lwdQ/idS9r5mV6wAAAA=',
+    aiGenerated: true,
+  },
+  'service-valuation': {
+    slug: 'service-valuation',
+    alt: 'שולחן ליד חלון עם סרט מדידה, תוכנית דירה ומפתחות',
+    aspect: '4:3',
+    src: '/media/service-valuation-960.avif',
+    fallback: '/media/service-valuation-960.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoUAA8APwlwsFArpiSisAgBcCEJZQC06C5JAAD+6dU/K8G1teLzELPtDfe0uDv+p3IRrisAAAA=',
+    aiGenerated: true,
+  },
+  'texture-concrete': {
+    slug: 'texture-concrete',
+    alt: '',
+    aspect: '21:9',
+    src: '/media/texture-concrete-1600.avif',
+    fallback: '/media/texture-concrete-1600.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAwCdASoUAAkAPwlur0+rpiQiMAgBcCEJQBOkCYhgU1+1ACR/AAD+6m8ExzuKS6XNbE3Zdn1Edz9UcaSAAA==',
+    aiGenerated: true,
+  },
+  'texture-stone-facade': {
+    slug: 'texture-stone-facade',
+    alt: '',
+    aspect: '21:9',
+    src: '/media/texture-stone-facade-1600.avif',
+    fallback: '/media/texture-stone-facade-1600.webp',
+    placeholder:
+      'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABwAwCdASoUAAkAPwlysVArpqSisAgBcCEJYwCdACHMPTd6ogAA/tQEgqbHyMM/YK0RCmMXngAAAA==',
+    aiGenerated: true,
+  },
+};
+/* GENERATED:assets:end */
 
 /**
  * Resolve a slug to an asset, falling back to a neutral placeholder.

@@ -15,7 +15,8 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "images:generate": "tsx scripts/images/generate.ts",
-    "verify": "npm run typecheck && npm run lint && npm run test && npm run build"
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "build:pages": "vite-react-ssg build && tsx scripts/deploy/build-pages.ts"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",

@@ -1,0 +1,20 @@
+{
+  "code": 0,
+  "message": "SUCCEED",
+  "request_id": "Cjg3NDk2MTU2NDQ2NjgwNjc4OQ",
+  "data": {
+    "task_id": "774961564466806789",
+    "task_status": "succeed",
+    "task_status_msg": "",
+    "created_at": 1757366400000,
+    "updated_at": 1757366438000,
+    "task_result": {
+      "images": [
+        {
+          "index": 0,
+          "url": "https://cdn.klingai.com/bs2/upload-kling-api/0000000000/image/774961564466806789-0.png?x-kcdn-pid=112372&expires=1757370000"
+        }
+      ]
+    }
+  }
+}

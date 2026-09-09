@@ -1,0 +1,12 @@
+{
+  "code": 0,
+  "message": "SUCCEED",
+  "request_id": "Cjg3NDk2MTU2NDQ2NjgwNjc4OQ",
+  "data": {
+    "task_id": "774961564466806789",
+    "task_status": "failed",
+    "task_status_msg": "the request content did not pass the content moderation policy",
+    "created_at": 1757366400000,
+    "updated_at": 1757366421000
+  }
+}

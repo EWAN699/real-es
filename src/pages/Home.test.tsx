@@ -2,6 +2,8 @@ import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
+import { getMedia } from '@/content/media';
+
 import { Component as Home } from './Home';
 
 // The document head is set through vite-react-ssg's <Head>, which needs the
@@ -107,8 +109,14 @@ describe('Home', () => {
       expect(frame.className).toMatch(/aspect-\[/);
     }
 
-    for (const image of container.querySelectorAll('img')) {
-      expect(image.getAttribute('src') ?? '').not.toContain('/media/');
+    // Every rendered src is what `getMedia` returns for that frame's slug —
+    // a real optimised file where the pipeline has produced one, the inline
+    // placeholder where it has not. A hardcoded path would match neither.
+    for (const frame of frames) {
+      const slug = frame.getAttribute('data-media-slug') ?? '';
+      const image = frame.querySelector('img');
+
+      expect(image?.getAttribute('src')).toBe(getMedia(slug).fallback);
     }
   });
 });

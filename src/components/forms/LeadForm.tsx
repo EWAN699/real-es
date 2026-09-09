@@ -10,7 +10,7 @@ import {
   type LeadErrors,
   type LeadTopic,
 } from '../../../api/_schemas/lead';
-import { contact, telHref } from '@/content/contact';
+import { contact, telHref, whatsappHref } from '@/content/contact';
 import { Button } from '@/components/ui/Button';
 import { Field, Honeypot, Input, Select, Textarea } from '@/components/ui/Field';
 
@@ -31,6 +31,14 @@ import { Field, Honeypot, Input, Select, Textarea } from '@/components/ui/Field'
  *    so they are safe to render verbatim. Focus moves to the first bad field.
  *  - `429` and `500` fall back to the phone number. A lead that cannot be
  *    submitted is still a lead.
+ *  - `404` and `405` mean the endpoint is not there at all — a static host with
+ *    no serverless functions, which is exactly what a GitHub Pages demo build
+ *    is. The form says the submission was NOT sent and hands over the phone,
+ *    WhatsApp and email, which do work. It never shows the confirmation for a
+ *    lead that went nowhere: only a `202` is success.
+ *
+ * Every failure branch renders the direct channels alongside the message, so
+ * "the form did not work" is never the end of the conversation.
  */
 export type LeadFormProps = {
   /** Routes the notification. Fixed per page unless `selectableTopic` is set. */
@@ -121,6 +129,18 @@ export function LeadForm({ topic, selectableTopic = false, submitLabel = 'שלי
       if (response.status === 400) {
         const body = (await response.json()) as { errors?: LeadErrors };
         reject(body.errors ?? { form: 'שגיאה בשליחת הטופס. נסו שוב.' });
+        return;
+      }
+
+      if (response.status === 404 || response.status === 405) {
+        // No endpoint behind this deployment. Saying "try again" would be a lie:
+        // a retry cannot succeed, and the visitor's message is still on screen
+        // for them to copy into WhatsApp or an email.
+        setStatus({
+          kind: 'error',
+          message:
+            'הטופס אינו פעיל בגרסה הזו של האתר, והפנייה לא נשלחה. אפשר לפנות אלינו ישירות בערוצים הבאים:',
+        });
         return;
       }
 
@@ -245,9 +265,53 @@ export function LeadForm({ topic, selectableTopic = false, submitLabel = 'שלי
         </p>
       </div>
 
+      {/*
+       * The live region is always in the DOM, so a message put into it later is
+       * announced — a region created at the same moment as its content is
+       * frequently missed.
+       */}
       <p role="status" className="text-small font-semibold text-brand-700">
         {status.kind === 'error' ? status.message : ''}
       </p>
+
+      {status.kind === 'error' ? <DirectChannels /> : null}
     </form>
+  );
+}
+
+/**
+ * The channels that work when the form does not: a dialable number, WhatsApp
+ * and an email address. Rendered under every failure message.
+ */
+function DirectChannels() {
+  return (
+    <ul className="flex flex-col gap-2 text-small">
+      <li>
+        <a
+          href={telHref(contact.nationalPhone)}
+          className="tabular font-semibold text-brand-700 underline underline-offset-4 hover:text-ink-900"
+          dir="ltr"
+        >
+          {contact.nationalPhone}
+        </a>
+      </li>
+      <li>
+        <a
+          href={whatsappHref('שלום, ניסיתי לשלוח פנייה דרך האתר')}
+          className="font-semibold text-brand-700 underline underline-offset-4 hover:text-ink-900"
+        >
+          וואטסאפ
+        </a>
+      </li>
+      <li>
+        <a
+          href={`mailto:${contact.email}`}
+          className="font-semibold text-brand-700 underline underline-offset-4 hover:text-ink-900"
+          dir="ltr"
+        >
+          {contact.email}
+        </a>
+      </li>
+    </ul>
   );
 }

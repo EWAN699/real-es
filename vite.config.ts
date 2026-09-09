@@ -6,6 +6,9 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  // GitHub Pages serves a project site from a subpath. Unset elsewhere, so a
+  // production build for the real domain stays rooted at '/'.
+  base: process.env.PAGES_BASE ?? '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

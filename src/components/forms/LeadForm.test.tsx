@@ -141,6 +141,30 @@ describe('LeadForm', () => {
     expect(await screen.findByText(/להתקשר אלינו/)).toBeInTheDocument();
   });
 
+  it('says the lead was not sent when the endpoint does not exist, and offers the channels that work', async () => {
+    // A static deployment with no serverless functions — the GitHub Pages demo
+    // build — answers a POST to /api/lead with a 404.
+    server.use(http.post('/api/lead', () => new HttpResponse(null, { status: 404 })));
+
+    renderForm();
+    await fillValidLead();
+    await submit();
+
+    expect(await screen.findByText(/הפנייה לא נשלחה/)).toBeInTheDocument();
+    // Never the confirmation: a lead that went nowhere is not a lead received.
+    expect(screen.queryByText(/הפנייה התקבלה/)).toBeNull();
+
+    expect(screen.getByRole('link', { name: 'וואטסאפ' }).getAttribute('href')).toMatch(
+      /^https:\/\/wa\.me\/\d+/,
+    );
+    expect(
+      screen.getAllByRole('link').some((link) => link.getAttribute('href')?.startsWith('tel:')),
+    ).toBe(true);
+
+    // The typed message is still on screen to copy, not thrown away.
+    expect(screen.getByLabelText(/שם מלא/)).toHaveValue('ישראל ישראלי');
+  });
+
   it('keeps the visitor informed when the network is gone', async () => {
     server.use(http.post('/api/lead', () => HttpResponse.error()));
 

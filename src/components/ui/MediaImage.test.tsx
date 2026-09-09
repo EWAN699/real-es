@@ -10,8 +10,16 @@ describe('MediaImage', () => {
     render(<MediaImage slug="hero-tel-aviv-skyline" alt="קו הרקיע של תל אביב" />);
 
     const image = screen.getByRole('img', { name: 'קו הרקיע של תל אביב' });
+
+    /*
+     * Asserted against what the registry returns, not against a literal path.
+     * The registry answers with a real file once the pipeline has produced one
+     * and with an inline placeholder before that, so a component that wrote its
+     * own path would fail this in both states — which is the thing being
+     * protected. Pinning the literal `/media/` prefix only worked while the
+     * registry was empty.
+     */
     expect(image).toHaveAttribute('src', getMedia('hero-tel-aviv-skyline').fallback);
-    expect(image.getAttribute('src')).not.toContain('/media/');
   });
 
   it('reserves the aspect ratio so nothing shifts when the real file lands', () => {
