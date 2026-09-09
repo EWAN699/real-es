@@ -4,14 +4,13 @@ import { contactSchema, type Contact } from './types';
  * Contact details — the single source of truth for the footer, the lead form
  * and the Organization JSON-LD.
  *
- * Provenance: every value below except `whatsapp` and `addressLocality` is
+ * Provenance: every value below except `addressLocality` is
  * printed on the client's own homepage, above the enquiry form:
  *
  *   "לייעוץ אישי ללא התחייבות: 1599-556655 | 052-5416313 | info@caesar.co.il"
  *
- * REVIEW — `whatsapp` is the direct mobile in E.164, on the assumption that the
- * number that answers calls also answers WhatsApp. Confirm before the button
- * ships; a WhatsApp link to a number nobody watches is worse than no button.
+ * `whatsapp` is the direct mobile in E.164. Confirmed by the client as the
+ * number that answers WhatsApp, so the button is cleared to ship.
  *
  * REVIEW — `addressLocality`. The homepage publishes no street address, only
  * "בפריסה ארצית". Rather than invent an office, this records the country and

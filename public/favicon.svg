@@ -1,13 +1,18 @@
-<!--
-  TEMPORARY placeholder favicon.
-
-  Matches the placeholder mark in src/components/layout/Logo.tsx: brand green
-  with the Hebrew initial. Replace this and Logo.tsx together when the real
-  CAESAR roof/arrow logo arrives as SVG — they are the only two files that
-  carry the mark.
--->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="קבוצת קיסר">
-  <rect width="64" height="64" rx="14" fill="#8CC542"/>
-  <text x="32" y="46" font-family="Arial Hebrew, Arial, sans-serif" font-size="40"
-        font-weight="700" text-anchor="middle" fill="#14171A">ק</text>
+  <!--
+    Caesar mark: a Roman arch and its keystone.
+
+    Original artwork. The arch is drawn as an opening rather than a solid
+    dome — the void between the piers is what makes it read as architecture
+    instead of a bag. The wedge at the crown is the keystone: the stone that
+    locks an arch and lets it carry load, which is the closest architectural
+    figure for what an asset manager does.
+
+    Band thickness is 8 of 64 units so the form survives a 16px browser tab.
+  -->
+  <rect width="64" height="64" rx="14" fill="#14171A"/>
+  <path fill="#8CC542" fill-rule="evenodd"
+        d="M16 50 L16 28 A16 16 0 0 1 48 28 L48 50 Z
+           M24 50 L24 28 A8 8 0 0 1 40 28 L40 50 Z"/>
+  <path d="M28.1 21 L26.5 13 L37.5 13 L35.9 21 Z" fill="#F6F5F2"/>
 </svg>
