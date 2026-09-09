@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # typecheck -> lint -> unit tests (incl. the palette contrast contract) -> SSG build
+      - run: npm run verify
+
+      # The Kling keys must never reach the client bundle. Vite inlines any
+      # VITE_-prefixed value, so this is a hard gate rather than a convention.
+      - name: Assert no secrets in the built bundle
+        run: |
+          if grep -rIlE 'KLING_(ACCESS|SECRET)_KEY|RESEND_API_KEY' dist/; then
+            echo "::error::Secret reference found in build output"
+            exit 1
+          fi
+
+      # Regressions this rebuild exists to fix.
+      - name: Assert legacy defects stay fixed
+        run: |
+          if grep -rIl 'wp-login\|wp-register' dist/; then
+            echo "::error::WordPress auth reference in build output"
+            exit 1
+          fi
+          if grep -rIoE '(src|href)="http://' dist/; then
+            echo "::error::Insecure http:// asset URL in build output"
+            exit 1
+          fi
+          grep -q 'dir="rtl"' dist/index.html || { echo "::error::Missing dir=rtl"; exit 1; }

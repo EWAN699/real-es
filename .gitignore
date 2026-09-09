@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vite-react-ssg/
+coverage/
+test-results/
+playwright-report/
+
+# Secrets. KLING_ACCESS_KEY / KLING_SECRET_KEY live here and nowhere else.
+.env
+.env.local
+.env.*.local
+
+# Kling scratch space: raw downloads before sharp optimises them.
+scripts/images/.cache/
+
+.DS_Store
+*.log

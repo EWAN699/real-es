@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens. Values mirror src/styles/tokens.ts, which is the source of
+ * truth and is contrast-tested. Keep the two in sync — tokens.test.ts fails
+ * the build if they drift.
+ */
+@theme {
+  /* Brand green, evolved rather than replaced. See tokens.ts for the rules. */
+  --color-brand-300: #b4dc85;
+  --color-brand-500: #8cc542;
+  --color-brand-600: #6fa22f;
+  --color-brand-700: #4f7a1f;
+
+  --color-ink-400: #8a9199;
+  --color-ink-600: #4a5259;
+  --color-ink-900: #14171a;
+
+  --color-stone-50: #ffffff;
+  --color-stone-100: #f6f5f2;
+  --color-stone-200: #e7e4dd;
+
+  /* Hebrew-first type stack. Heebo carries display, Assistant carries text. */
+  --font-display: 'Heebo', 'Arial Hebrew', Arial, sans-serif;
+  --font-sans: 'Assistant', 'Arial Hebrew', Arial, sans-serif;
+
+  /*
+   * Type scale. The legacy site shipped h1 at 18px and h2 at 24px — the
+   * headline was smaller than the subhead. This restores the hierarchy.
+   */
+  --text-display: 3.75rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: 2.75rem;
+  --text-h1--line-height: 1.12;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.2;
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.3;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.7;
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.6;
+
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.875rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-stone-100);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  /* Track-record figures line up in columns rather than jittering. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /*
+   * Visible focus for every interactive element. The legacy site relied on an
+   * accessibility overlay widget; this build does it natively.
+   */
+  :focus-visible {
+    outline: 3px solid var(--color-brand-600);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  max-inline-size: 80rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+}
