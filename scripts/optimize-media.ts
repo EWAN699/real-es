@@ -44,6 +44,10 @@ const BUDGETS = {
 
 const MAX_EDGE = { image: 2000, thumbnail: 800 } as const;
 
+/** Quality ladder used when a first encode lands over its size ceiling. */
+const QUALITY_STEP = 8;
+const QUALITY_FLOOR = 40;
+
 const IMAGE_SOURCES = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp', '.avif']);
 const VIDEO_SOURCES = new Set(['.mp4', '.mov', '.m4v', '.webm', '.mkv']);
 /** Derived files we produce; never treated as sources for another pass. */
@@ -81,6 +85,7 @@ interface Report {
 }
 
 const written: string[] = [];
+const reencoded: string[] = [];
 const overBudget: Report[] = [];
 const notes: string[] = [];
 const problems: string[] = [];
@@ -235,14 +240,15 @@ async function processImage(src: string) {
       : BUDGETS.sectionImage;
 
   // .jpg fallback only for the hero, per contracts/assets.md.
-  const targets: Array<{ ext: string; make: (p: Sharp) => Sharp }> = [
-    { ext: '.webp', make: (p) => p.webp({ quality: 82, effort: 5 }) },
-    { ext: '.avif', make: (p) => p.avif({ quality: 55, effort: 5 }) },
+  const targets: Array<{ ext: string; base: number; make: (p: Sharp, q: number) => Sharp }> = [
+    { ext: '.webp', base: 82, make: (p, q) => p.webp({ quality: q, effort: 5 }) },
+    { ext: '.avif', base: 55, make: (p, q) => p.avif({ quality: q, effort: 5 }) },
   ];
   if (section === 'hero') {
     targets.push({
       ext: '.jpg',
-      make: (p) => p.jpeg({ quality: 82, mozjpeg: true, progressive: true }),
+      base: 82,
+      make: (p, q) => p.jpeg({ quality: q, mozjpeg: true, progressive: true }),
     });
   }
 
@@ -257,13 +263,28 @@ async function processImage(src: string) {
       notes.push(`would write ${rel(out)}`);
       continue;
     }
-    const pipeline = sharp(src, { failOn: 'error' }).rotate().resize({
-      width: maxEdge,
-      height: maxEdge,
-      fit: 'inside',
-      withoutEnlargement: true,
-    });
-    await t.make(pipeline).toFile(out);
+    // contracts/assets.md: "Over budget means re-encode, not ship anyway." A
+    // fixed quality is fine for most frames but blows the ceiling on dense ones
+    // (city lights, foliage), so step down until it fits rather than reporting
+    // a file we then ship anyway.
+    let quality = t.base;
+    for (;;) {
+      const pipeline = sharp(src, { failOn: 'error' }).rotate().resize({
+        width: maxEdge,
+        height: maxEdge,
+        fit: 'inside',
+        withoutEnlargement: true,
+      });
+      await t.make(pipeline, quality).toFile(out);
+      const { size } = await stat(out);
+      if (size <= budget || quality <= QUALITY_FLOOR) break;
+      quality = Math.max(QUALITY_FLOOR, quality - QUALITY_STEP);
+    }
+    if (quality !== t.base) {
+      reencoded.push(
+        `${rel(out)}: quality ${t.base} → ${quality} to fit the ${fmt(budget)} ceiling`,
+      );
+    }
     written.push(rel(out));
     await record(out, budget, `image ${thumb ? '(thumb)' : ''}`.trim());
   }
@@ -449,6 +470,11 @@ async function main() {
   if (notes.length) {
     console.log(`\n[media] would write ${notes.length} file(s):`);
     for (const n of notes) console.log(`  · ${n}`);
+  }
+
+  if (reencoded.length) {
+    console.log(`\n[media] stepped quality down to stay inside the ceiling:`);
+    for (const r of reencoded) console.log(`  ~ ${r}`);
   }
 
   if (overBudget.length) {

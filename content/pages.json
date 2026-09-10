@@ -449,7 +449,15 @@
               }
             }
           ],
-          "media": [],
+          "media": [
+            {
+              "id": "coverage-density",
+              "kind": "image",
+              "alt": "מבט לילי מרחוק על מרקם עירוני צפוף, אשכולות אור חמים ההולכים ומידללים אל תוך אובך",
+              "src": "/media/coverage/coverage-density.webp",
+              "origin": "kling"
+            }
+          ],
           "motion": "fade-up",
           "provenance": {
             "source": "harvested",

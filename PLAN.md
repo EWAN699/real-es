@@ -34,7 +34,7 @@ have failed about half the downloads.
 - [x] **Phase 1A — `ui-motion` START.** Harvest → `content/raw-harvest.json`, `brand.md`, `pages.json`, `asset-plan.md`. **Gate: user approves the asset plan.**
 - [x] **Phase 1B — `platform` START.** Scaffold, typed loader, Lenis + `useScrollAnimation`, media script, SEO, RTL, Playwright.
 - [x] **Phase 2 — Contract check.** `pages.json` validates through the loader. Mismatches fixed in content, not schema.
-- [x] **Phase 3A — Assets.** 7 jobs run, 6 shipped, 1 rejected (I5 — see below). Production `npm run build` now passes.
+- [x] **Phase 3A — Assets.** 8 jobs run, 7 shipped, 1 rejected and re-run. Production `npm run build` now passes.
 - [ ] **Phase 3B — `ui-motion` END.** Sections, choreography, reduced motion, responsive, Lighthouse.
 - [ ] **Phase 3C — `platform` END.** Optimize, build, CI, deploy, `DEPLOY.md`.
 - [ ] **Phase 4 — Verification.** Orchestrator re-runs build and Lighthouse independently.
@@ -103,9 +103,9 @@ that costs the demo URL from this session, not the work.
   site is a single scroll page and `pages.json` carries a `contact` section, so the
   form has a home. Not a gap.
 
-## Phase 3A — complete, with one asset held
+## Phase 3A — complete
 
-- **All seven jobs ran; 180 credits spent, 343 left.** Six are shipped and optimized
+- **Eight jobs ran; 200 credits spent, 323 left.** Seven are shipped and optimized
   inside their size ceilings. Every result was downloaded the moment it completed, so
   the 24h URL expiry is no longer a risk to anything.
 - **Production build passes.** `npm run build` previously exited 1 naming four
@@ -121,13 +121,22 @@ that costs the demo URL from this session, not the work.
 - **Three model defaults would have violated the contract** and were pinned:
   `resolution` (4k → 1080p), `prefer_multi_shots` (true → false, which would have cut
   the single-shot brief into multiple shots) and `enable_audio`.
-- **I5 (`coverage`) rejected and held for the user.** It produced a recognisable
-  satellite map of the Levant — Dead Sea, Sea of Galilee and Jordan Rift all legible —
-  which is the exact outcome its "no recognisable coastline shape" clause existed to
-  prevent. Not re-run: `contracts/assets.md` forbids resubmitting after a bad result
-  without asking. Nothing is gated on it; `coverage` keeps `media: []`.
+- **I5 (`coverage`) was rejected, escalated, and re-run.** The first attempt produced
+  a recognisable satellite map of the Levant — Dead Sea, Sea of Galilee and Jordan Rift
+  all legible — the exact outcome its "no recognisable coastline shape" clause existed
+  to prevent. Not silently re-run: `contracts/assets.md` forbids resubmitting after a
+  bad result without asking, so it went to the user, who approved a revision. The fix
+  changed the camera rather than adding more negative clauses — a top-down satellite
+  view necessarily shows a landmass against a sea, so the revision uses an
+  extreme-telephoto oblique filled edge to edge with city light, leaving no horizon or
+  shoreline to read as geography. Cost of the mistake: 20 credits, logged rather than
+  dropped.
 - **One pipeline defect fixed.** `public/media/README.md` says to drop originals into
   `public/media/` and run the optimizer, which left 31 MB of source PNGs staged inside
   `public/` where they would be committed and served. Raw source extensions under
   `public/media/` are now gitignored; only the derivatives ship. Worth folding into
   the script properly in 3C so it reads from `assets/source/` instead.
+- **The optimizer was silently violating its own contract.** It reported over-budget
+  files and then wrote them anyway; `coverage-density` was the first frame dense enough
+  to expose it (483 KB against a 400 KB ceiling). It now steps quality down until the
+  file fits and reports what it did. One step sufficed: quality 74, 314 KB.

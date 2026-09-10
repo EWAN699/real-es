@@ -3,11 +3,11 @@
 Every Kling job, logged as it happens per `contracts/assets.md`. A job appears here the
 moment it is submitted, so a failed or lost run can be traced without re-running it.
 
-**Result URLs expire ~24 hours after generation.** All seven jobs below were downloaded
+**Result URLs expire ~24 hours after generation.** All eight jobs below were downloaded
 to `assets/source/` immediately on completion, so the expiry no longer matters.
 
-**Phase 3A totals:** 7 jobs, 180 credits (V1 Step A 20 + V1 Step B 40 + six images at 20).
-Balance after the run: 343 credits. All seven pinned to the models the user fixed at the
+**Phase 3A totals:** 8 jobs, 200 credits (V1 Step A 20 + V1 Step B 40 + seven images at 20,
+one of which was the approved I5 re-run). Balance after the run: 323 credits. All eight pinned to the models the user fixed at the
 approval gate — `gemini-3-pro-image` for stills, `kling-video-v3_0` for the hero.
 
 | Job | Section | Generation id | Model | Credits | Finished (UTC) | Took | Outcome |
@@ -18,7 +18,8 @@ approval gate — `gemini-3-pro-image` for stills, `kling-video-v3_0` for the he
 | I2 | `services` | `AYaNy5mVN0Fg1u3rq5d9wGO5a79Tmz8KIMeQIMjtQr1de6tAkTmEi4minRJmLfyuFAXtBAi-` | gemini-3-pro-image | 20 | 2026-09-10 10:32:18Z | 47s | ✅ shipped |
 | I3 | `method` | `AUtBE7w1rjPbhMoY862lS4OJj3VSLw9SPsyg_I2mNFGxbXLGUYbj-QLGvdHycKwZg1T98PRZ` | gemini-3-pro-image | 20 | 2026-09-10 10:32:17Z | 41s | ✅ shipped |
 | I4 | `package` | `AcvDEgcze8mKZJOP_Sn0E3ONM2xNGvDyjxjbx1K20NOTcFeMe2WjbbhByce_mCNfUjRMIVae` | gemini-3-pro-image | 20 | 2026-09-10 10:32:12Z | 32s | ✅ shipped |
-| I5 | `coverage` | `AYjg_4v4TUScU2mF-Sa7d139XWeayER5U2BV4ShbmODb6SIVNTmWTfW7buwOk_kAj8e6k1Yc` | gemini-3-pro-image | 20 | 2026-09-10 10:32:15Z | 31s | ⛔ **rejected — see below** |
+| I5 | `coverage` | `AYjg_4v4TUScU2mF-Sa7d139XWeayER5U2BV4ShbmODb6SIVNTmWTfW7buwOk_kAj8e6k1Yc` | gemini-3-pro-image | 20 | 2026-09-10 10:32:15Z | 31s | ⛔ rejected, not shipped |
+| I5b | `coverage` | `AaIQSj2aTWUh2Bpn2IlUwFtGAPccf0Xzv4CJgpBbAH5t51xtVPRjJvTL3qZPjdjhwTF5MMJ9` | gemini-3-pro-image | 20 | 2026-09-10 10:44:26Z | 35s | ✅ shipped (I5 re-run) |
 | I6 | `consult` | `AXnBUEDSBZOkNgqAxQlbERMjHc0wp9ccuv51b8YG_pFlAnwJMlozJj4femFTM-FlnGpJBzQD` | gemini-3-pro-image | 20 | 2026-09-10 10:32:22Z | 34s | ✅ shipped |
 
 ---
@@ -83,9 +84,9 @@ post rather than by resubmitting:
 
 ---
 
-## I5 · `coverage` · REJECTED, held for a decision
+## I5 · `coverage` · rejected, then re-run and shipped
 
-**The job succeeded technically and failed its own acceptance criterion.**
+**The first attempt succeeded technically and failed its own acceptance criterion.**
 
 The prompt ended with "no borders drawn, no place labels, no recognisable coastline
 shape", and the asset plan flagged why that clause mattered:
@@ -93,16 +94,27 @@ shape", and the asset plan flagged why that clause mattered:
 > **"No recognisable coastline shape" is load-bearing** — an identifiable map of Israel
 > would turn an illustration into a territorial claim.
 
-What came back is a recognisable night satellite view of the Levant: the Mediterranean
-coast, the Dead Sea, the Sea of Galilee and the Jordan Rift are all legible. That is
-precisely the outcome the clause existed to prevent, so it has **not** been placed in
-`public/media/` and `coverage` still carries `media: []`.
+What came back was a legible night satellite view of the Levant: the Mediterranean
+coast, the Dead Sea, the Sea of Galilee and the Jordan Rift all readable. That is
+exactly the outcome the clause existed to prevent, so it was not placed in
+`public/media/`. It was **not** silently re-run — `contracts/assets.md` forbids
+resubmitting after a bad result without asking — and was put to the user, who approved
+a revision.
 
-Not re-run. `contracts/assets.md` forbids resubmission after a bad result without
-asking, so the decision is the user's. The 20 credits are spent either way.
+**Why the re-run changed the camera rather than the wording.** Adding more negative
+clauses to a top-down satellite framing was unlikely to help: the satellite framing is
+itself what invites the map reading, because it necessarily shows a landmass against a
+sea. The revision replaces it with an extreme-telephoto near-level oblique whose frame
+is filled edge to edge with lit urban fabric, so there is no horizon, no water and no
+landmass silhouette available to read as geography.
 
-The production build does **not** depend on this: `coverage` had no media entry to
-begin with, so nothing is gated on it.
+**Result:** compressed bands of warm window and street light, dense at the bottom and
+thinning into haze toward the top. It keeps what the section actually needs to say —
+191 of 278 live listings sit in Gush Dan and Haifa, a spine rather than a blanket —
+without drawing a country. Shipped as `coverage-density`.
+
+**Cost of the mistake:** 20 credits. Both jobs are logged above rather than the failure
+being quietly dropped.
 
 ---
 
@@ -121,3 +133,10 @@ begin with, so nothing is gated on it.
 - **Hero alt text corrected.** It described a "reflection" of a building facade; the
   frame shows the facade itself, defocused behind the key. `contracts/assets.md`
   requires alt to describe content, so the wording was changed to match what is there.
+- **The optimizer now honours its own contract.** `coverage-density` was the first
+  frame dense enough to blow the 400 KB section-image ceiling at the script's fixed
+  quality 82 (it landed at 483 KB). The script had only *reported* over-budget files
+  while writing them anyway, which contradicts "over budget means re-encode, not ship
+  anyway". It now steps quality down (8 at a time, floor 40) until the file fits, and
+  says so. One step was enough here: quality 74, 314 KB. The other five images were
+  re-encoded under the same logic and stayed at base quality, so nothing else changed.
