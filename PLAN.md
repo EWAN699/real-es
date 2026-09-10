@@ -50,8 +50,25 @@ No Kling job runs before the user approves `content/asset-plan.md` either way.
 - Content honesty: every section carries `provenance`. The harvested/authored ratio is
   reported to the user at the end rather than smoothed over.
 
+## Second risk — Macaly and Next.js
+
+Macaly Cloud is connected and holds no apps yet. Its capability guide (`skill_info`)
+requires an existing app id, so whether it hosts an arbitrary Next.js App Router build —
+rather than only its own template shape — cannot be confirmed without creating one.
+Deferred to Phase 3C rather than probed speculatively. If Macaly won't take the build,
+the fallback is the repo plus `DEPLOY.md` and a one-click import on the user's own host;
+that costs the demo URL from this session, not the work.
+
 ## Status log
 
 - **Phase 0 complete.** Contracts written (`contracts/`), agents defined
   (`.claude/agents/`), homepage CSV preserved at `archive/source/`, abandoned network
   scraper deleted (it targeted a network this session cannot reach and never executed).
+- **Subagent registration, as predicted.** `.claude/agents/ui-motion.md` and
+  `platform.md` are not dispatchable in the session that created them — agent types
+  register at session start, so `Agent type 'ui-motion' not found`. The definitions are
+  correct and will register in the next session. Phase 1 therefore runs both roles as
+  `general-purpose` agents pointed at those same role files, which preserves the
+  two-agent split, the parallelism and the isolated contexts.
+- **Phase 1 launched.** Agent A (harvest, brand, `pages.json`, asset plan) and Agent B
+  (scaffold, loader, hooks, tooling) running in parallel.
