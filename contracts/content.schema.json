@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caesar.rebuild/contracts/content.schema.json",
+  "title": "Caesar site content",
+  "type": "object",
+  "required": ["site", "pages"],
+  "additionalProperties": false,
+  "properties": {
+    "site": {
+      "type": "object",
+      "required": ["name", "locale", "dir", "sourceUrl", "tagline", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "locale": { "type": "string", "const": "he-IL" },
+        "dir": { "type": "string", "const": "rtl" },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "tagline": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "contact": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "phones": { "type": "array", "items": { "type": "string" } },
+            "emails": { "type": "array", "items": { "type": "string", "format": "email" } },
+            "address": { "type": "string" },
+            "social": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["platform", "href"],
+                "additionalProperties": false,
+                "properties": {
+                  "platform": { "type": "string" },
+                  "href": { "type": "string", "format": "uri" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/page" }
+    }
+  },
+  "$defs": {
+    "page": {
+      "type": "object",
+      "required": ["slug", "title", "metaDescription", "sections"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^/" },
+        "title": { "type": "string", "minLength": 1 },
+        "metaDescription": { "type": "string", "minLength": 1 },
+        "sections": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/section" }
+        }
+      }
+    },
+
+    "section": {
+      "type": "object",
+      "required": ["id", "type", "order", "heading", "body", "media", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "kebab-case; also the media directory name under public/media/"
+        },
+        "type": { "$ref": "#/$defs/sectionType" },
+        "order": { "type": "integer", "minimum": 0 },
+        "heading": { "type": "string" },
+        "subheading": { "type": "string" },
+        "body": {
+          "type": "string",
+          "description": "May be empty for sections that carry all their copy in items[]."
+        },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/item" },
+          "description": "Repeated content: service cards, city list, stats, testimonials, FAQ rows."
+        },
+        "media": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/media" }
+        },
+        "cta": { "$ref": "#/$defs/cta" },
+        "motion": { "$ref": "#/$defs/motionPreset" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+
+    "sectionType": {
+      "enum": [
+        "hero", "intro", "services", "stats", "showcase",
+        "coverage", "process", "testimonials", "faq", "cta", "contact"
+      ]
+    },
+
+    "motionPreset": {
+      "enum": ["fade-up", "pin-reveal", "parallax-slow", "text-split", "horizontal-scroll", "none"]
+    },
+
+    "item": {
+      "type": "object",
+      "required": ["id", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "body": { "type": "string" },
+        "value": { "type": "string", "description": "Stat figure, e.g. '10+'." },
+        "attribution": { "type": "string", "description": "Testimonial author." },
+        "location": { "type": "string" },
+        "href": { "type": "string" },
+        "media": { "$ref": "#/$defs/media" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+
+    "media": {
+      "type": "object",
+      "required": ["id", "kind", "alt"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "kind": { "enum": ["image", "video"] },
+        "alt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required on every asset. Hebrew, describing the image for screen readers."
+        },
+        "src": {
+          "type": "string",
+          "description": "public/media/{section-id}/{variant}.{ext} per contracts/assets.md. Absent until the asset exists."
+        },
+        "poster": { "type": "string", "description": "Required when kind is video." },
+        "origin": {
+          "enum": ["kling", "original-site", "placeholder"],
+          "description": "Where the asset came from. 'placeholder' must not survive to production."
+        },
+        "credit": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "const": "video" } }, "required": ["kind"] },
+          "then": { "required": ["poster"] }
+        }
+      ]
+    },
+
+    "cta": {
+      "type": "object",
+      "required": ["label", "href"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "href": { "type": "string", "minLength": 1 },
+        "style": { "enum": ["primary", "secondary", "ghost"] }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["source"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "enum": ["harvested", "authored", "rewritten"],
+          "description": "harvested = the company's own words, verbatim. rewritten = their words, edited for length or repetition. authored = written by Claude because coverage was thin."
+        },
+        "sourceUrl": {
+          "type": "string",
+          "description": "Required for harvested and rewritten. Where the copy came from."
+        },
+        "note": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "source": { "enum": ["harvested", "rewritten"] } },
+            "required": ["source"]
+          },
+          "then": { "required": ["sourceUrl"] }
+        }
+      ]
+    }
+  }
+}
