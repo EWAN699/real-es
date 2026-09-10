@@ -27,6 +27,16 @@
  * effect (so before paint) and only on the animated path. If JS never runs, or
  * reduced motion is on, the section renders complete — no permanently invisible
  * content, ever.
+ *
+ * **Setup is deferred until the section is near the viewport.** Building every
+ * section's triggers at load cost about a second of Style & Layout on a
+ * throttled mobile CPU — pins create spacers, the horizontal track measures its
+ * own scrollWidth, and ScrollTrigger measures all of it again on refresh — which
+ * put the page under the Lighthouse budget in motion.spec.md rule 6. An
+ * IntersectionObserver with a one-viewport margin means only what is about to
+ * matter gets measured, and a section still builds well before it is reached.
+ * A section already on screen at load builds immediately, because the observer
+ * fires for it straight away.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -73,6 +83,9 @@ const DEFAULTS = {
 /** 40ms between lines, per the text-split row of the spec. */
 const LINE_STAGGER = 0.04;
 
+/** How early a section builds its triggers. One viewport of lead-in. */
+const NEAR_VIEWPORT_MARGIN = '100%';
+
 export function useScrollAnimation<T extends HTMLElement = HTMLElement>(
   options: ScrollAnimationOptions = {},
 ): ScrollAnimationResult<T> {
@@ -115,53 +128,91 @@ export function useScrollAnimation<T extends HTMLElement = HTMLElement>(
       return;
     }
 
-    registerGsap();
+    // Until this section is near the viewport it stays on the static path,
+    // which is the same complete, readable render reduced motion gets. Nothing
+    // is hidden in the meantime, so a section that is never reached — or whose
+    // observer never fires — is still correct, just unanimated.
+    el.dataset.motionMode = 'static';
 
-    const mm = gsap.matchMedia();
+    // Captured so the deferred builder gets a non-null element without relying
+    // on narrowing surviving into a hoisted function.
+    const node: T = el;
+    const activePreset: MotionPreset = preset;
+    let teardown: (() => void) | undefined;
 
-    // The reduced-motion branch is deliberately empty of animation. Because no
-    // stylesheet hides anything, "do nothing" already means "render complete".
-    mm.add(
-      {
-        motionOk: '(prefers-reduced-motion: no-preference)',
-        reduced: '(prefers-reduced-motion: reduce)',
-      },
-      (ctx) => {
-        const motionOk = Boolean(ctx.conditions?.motionOk);
-
-        if (!motionOk) {
-          el.dataset.motionMode = 'static';
-          setMode('static');
-          return staticFallback(el, preset, reportProgress);
-        }
-
-        el.dataset.motionMode = 'animated';
-        setMode('animated');
-
-        const q = gsap.utils.selector(el);
-        switch (preset) {
-          case 'fade-up':
-            return buildFadeUp(el, q, { stagger, distance, start });
-          case 'text-split':
-            return buildTextSplit(el, { start });
-          case 'parallax-slow':
-            return buildParallax(el, q, { speed });
-          case 'pin-reveal':
-            return buildPinReveal(el, q, { stepLength, reportProgress });
-          case 'horizontal-scroll':
-            return buildHorizontalScroll(el, q, { reportProgress });
-          default:
-            return undefined;
-        }
-      },
-    );
-
-    // One owner, one teardown: revert() kills every trigger and tween created
-    // inside the matchMedia scope and restores the elements' original state.
-    return () => {
-      mm.revert();
-      delete el.dataset.motionMode;
+    const build = () => {
+      teardown = buildFor(node, activePreset);
     };
+
+    if (typeof IntersectionObserver === 'undefined') {
+      build();
+      return () => teardown?.();
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        build();
+      },
+      { rootMargin: `${NEAR_VIEWPORT_MARGIN} 0px ${NEAR_VIEWPORT_MARGIN} 0px` },
+    );
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      teardown?.();
+    };
+
+    function buildFor(el: T, preset: MotionPreset): () => void {
+      registerGsap();
+
+      const mm = gsap.matchMedia();
+
+      // The reduced-motion branch is deliberately empty of animation. Because no
+      // stylesheet hides anything, "do nothing" already means "render complete".
+      mm.add(
+        {
+          motionOk: '(prefers-reduced-motion: no-preference)',
+          reduced: '(prefers-reduced-motion: reduce)',
+        },
+        (ctx) => {
+          const motionOk = Boolean(ctx.conditions?.motionOk);
+
+          if (!motionOk) {
+            el.dataset.motionMode = 'static';
+            setMode('static');
+            return staticFallback(el, preset, reportProgress);
+          }
+
+          el.dataset.motionMode = 'animated';
+          setMode('animated');
+
+          const q = gsap.utils.selector(el);
+          switch (preset) {
+            case 'fade-up':
+              return buildFadeUp(el, q, { stagger, distance, start });
+            case 'text-split':
+              return buildTextSplit(el, { start });
+            case 'parallax-slow':
+              return buildParallax(el, q, { speed });
+            case 'pin-reveal':
+              return buildPinReveal(el, q, { stepLength, reportProgress });
+            case 'horizontal-scroll':
+              return buildHorizontalScroll(el, q, { reportProgress });
+            default:
+              return undefined;
+          }
+        },
+      );
+
+      // One owner, one teardown: revert() kills every trigger and tween created
+      // inside the matchMedia scope and restores the elements' original state.
+      return () => {
+        mm.revert();
+        delete el.dataset.motionMode;
+      };
+    }
   }, [preset, enabled, stagger, distance, start, speed, stepLength, reportProgress]);
 
   return { ref, mode };

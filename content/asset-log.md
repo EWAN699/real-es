@@ -18,8 +18,8 @@ approval gate — `gemini-3-pro-image` for stills, `kling-video-v3_0` for the he
 | I2 | `services` | `AYaNy5mVN0Fg1u3rq5d9wGO5a79Tmz8KIMeQIMjtQr1de6tAkTmEi4minRJmLfyuFAXtBAi-` | gemini-3-pro-image | 20 | 2026-09-10 10:32:18Z | 47s | ✅ shipped |
 | I3 | `method` | `AUtBE7w1rjPbhMoY862lS4OJj3VSLw9SPsyg_I2mNFGxbXLGUYbj-QLGvdHycKwZg1T98PRZ` | gemini-3-pro-image | 20 | 2026-09-10 10:32:17Z | 41s | ✅ shipped |
 | I4 | `package` | `AcvDEgcze8mKZJOP_Sn0E3ONM2xNGvDyjxjbx1K20NOTcFeMe2WjbbhByce_mCNfUjRMIVae` | gemini-3-pro-image | 20 | 2026-09-10 10:32:12Z | 32s | ✅ shipped |
-| I5 | `coverage` | `AYjg_4v4TUScU2mF-Sa7d139XWeayER5U2BV4ShbmODb6SIVNTmWTfW7buwOk_kAj8e6k1Yc` | gemini-3-pro-image | 20 | 2026-09-10 10:32:15Z | 31s | ⛔ rejected, not shipped |
-| I5b | `coverage` | `AaIQSj2aTWUh2Bpn2IlUwFtGAPccf0Xzv4CJgpBbAH5t51xtVPRjJvTL3qZPjdjhwTF5MMJ9` | gemini-3-pro-image | 20 | 2026-09-10 10:44:26Z | 35s | ✅ shipped (I5 re-run) |
+| I5 | `coverage` | `AYjg_4v4TUScU2mF-Sa7d139XWeayER5U2BV4ShbmODb6SIVNTmWTfW7buwOk_kAj8e6k1Yc` | gemini-3-pro-image | 20 | 2026-09-10 10:32:15Z | 31s | ✅ **shipped — user's choice** |
+| I5b | `coverage` | `AaIQSj2aTWUh2Bpn2IlUwFtGAPccf0Xzv4CJgpBbAH5t51xtVPRjJvTL3qZPjdjhwTF5MMJ9` | gemini-3-pro-image | 20 | 2026-09-10 10:44:26Z | 35s | generated, not used |
 | I6 | `consult` | `AXnBUEDSBZOkNgqAxQlbERMjHc0wp9ccuv51b8YG_pFlAnwJMlozJj4femFTM-FlnGpJBzQD` | gemini-3-pro-image | 20 | 2026-09-10 10:32:22Z | 34s | ✅ shipped |
 
 ---
@@ -84,37 +84,39 @@ post rather than by resubmitting:
 
 ---
 
-## I5 · `coverage` · rejected, then re-run and shipped
+## I5 · `coverage` · flagged, re-run, and then reinstated by the user
 
-**The first attempt succeeded technically and failed its own acceptance criterion.**
+This one changed hands twice. The full trail, because the outcome went against the
+recommendation and that should be legible later rather than quietly smoothed over.
 
-The prompt ended with "no borders drawn, no place labels, no recognisable coastline
-shape", and the asset plan flagged why that clause mattered:
+**1. Flagged.** The prompt ended with "no borders drawn, no place labels, no
+recognisable coastline shape", and the asset plan explained why that clause was there:
 
 > **"No recognisable coastline shape" is load-bearing** — an identifiable map of Israel
 > would turn an illustration into a territorial claim.
 
-What came back was a legible night satellite view of the Levant: the Mediterranean
-coast, the Dead Sea, the Sea of Galilee and the Jordan Rift all readable. That is
-exactly the outcome the clause existed to prevent, so it was not placed in
-`public/media/`. It was **not** silently re-run — `contracts/assets.md` forbids
-resubmitting after a bad result without asking — and was put to the user, who approved
-a revision.
+What came back is a legible night satellite view of the Levant — Mediterranean coast,
+Dead Sea, Sea of Galilee, Jordan Rift. It was not shipped, and it was not silently
+re-run: `contracts/assets.md` forbids resubmitting after a bad result without asking.
 
-**Why the re-run changed the camera rather than the wording.** Adding more negative
-clauses to a top-down satellite framing was unlikely to help: the satellite framing is
-itself what invites the map reading, because it necessarily shows a landmass against a
-sea. The revision replaces it with an extreme-telephoto near-level oblique whose frame
-is filled edge to edge with lit urban fabric, so there is no horizon, no water and no
-landmass silhouette available to read as geography.
+**2. Re-run (I5b).** The user approved a revision. The fix changed the camera rather
+than the wording, since a top-down satellite framing necessarily shows a landmass
+against a sea. The result was an extreme-telephoto oblique of city light with no
+horizon, water or landmass silhouette.
 
-**Result:** compressed bands of warm window and street light, dense at the bottom and
-thinning into haze toward the top. It keeps what the section actually needs to say —
-191 of 278 live listings sit in Gush Dan and Haifa, a spine rather than a blanket —
-without drawing a country. Shipped as `coverage-density`.
+**3. Reinstated.** On seeing both, the user preferred the original and directed that it
+ship. **That is the decision of record and the site now uses I5.** I5b stays generated
+but unused.
 
-**Cost of the mistake:** 20 credits. Both jobs are logged above rather than the failure
-being quietly dropped.
+**The concern I raised still stands and is recorded, not withdrawn:** the frame reads
+as a map of a territory rather than as an illustration of where the company works, and
+the asset plan's own reasoning was that this implies a claim the harvest does not
+support — 191 of 278 live listings sit in two regions, so the company's actual footprint
+is a coastal spine, not the whole landmass shown. It is a judgement call about
+marketing implication on a client site, and it is the client's to make.
+
+**Cost:** 40 credits across the two jobs, one of which is unused. Logged rather than
+dropped.
 
 ---
 

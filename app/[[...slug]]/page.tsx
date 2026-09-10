@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 
+import { SiteFooter } from '@/components/chrome/SiteFooter';
+import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SectionRenderer } from '@/components/sections/SectionRenderer';
 import { getPage, pages, sectionsOf, slugToSegments } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo';
@@ -25,10 +27,14 @@ export default async function CatchAllPage({ params }: { params: Promise<Params>
   if (!page) notFound();
 
   return (
-    <main id="main">
-      {sectionsOf(page).map((section) => (
-        <SectionRenderer key={section.id} section={section} />
-      ))}
-    </main>
+    <>
+      <SiteHeader />
+      <main id="main">
+        {sectionsOf(page).map((section) => (
+          <SectionRenderer key={section.id} section={section} pageSlug={page.slug} />
+        ))}
+      </main>
+      <SiteFooter />
+    </>
   );
 }

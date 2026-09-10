@@ -121,21 +121,14 @@ that costs the demo URL from this session, not the work.
 - **Three model defaults would have violated the contract** and were pinned:
   `resolution` (4k → 1080p), `prefer_multi_shots` (true → false, which would have cut
   the single-shot brief into multiple shots) and `enable_audio`.
-- **I5 (`coverage`) was rejected, escalated, and re-run.** The first attempt produced
-  a recognisable satellite map of the Levant — Dead Sea, Sea of Galilee and Jordan Rift
-  all legible — the exact outcome its "no recognisable coastline shape" clause existed
-  to prevent. Not silently re-run: `contracts/assets.md` forbids resubmitting after a
-  bad result without asking, so it went to the user, who approved a revision. The fix
-  changed the camera rather than adding more negative clauses — a top-down satellite
-  view necessarily shows a landmass against a sea, so the revision uses an
-  extreme-telephoto oblique filled edge to edge with city light, leaving no horizon or
-  shoreline to read as geography. Cost of the mistake: 20 credits, logged rather than
-  dropped.
-- **One pipeline defect fixed.** `public/media/README.md` says to drop originals into
-  `public/media/` and run the optimizer, which left 31 MB of source PNGs staged inside
-  `public/` where they would be committed and served. Raw source extensions under
-  `public/media/` are now gitignored; only the derivatives ship. Worth folding into
-  the script properly in 3C so it reads from `assets/source/` instead.
+- **I5 (`coverage`): flagged, re-run, then reinstated by the user.** The first attempt
+  produced a recognisable satellite map of the Levant, which its "no recognisable
+  coastline shape" clause existed to prevent, so it was escalated rather than silently
+  re-run. The approved re-run (I5b) changed the camera to a telephoto oblique with no
+  horizon or shoreline. Shown both, the user preferred the original and directed that
+  it ship; **I5 is the decision of record** and I5b is unused. The concern is recorded
+  in `content/asset-log.md` rather than withdrawn — it is a marketing-implication
+  judgement on a client site, and the client's to make. 40 credits across the two.
 - **The optimizer was silently violating its own contract.** It reported over-budget
   files and then wrote them anyway; `coverage-density` was the first frame dense enough
   to expose it (483 KB against a 400 KB ceiling). It now steps quality down until the

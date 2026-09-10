@@ -56,5 +56,11 @@
     "tailwindcss": "^4",
     "tsx": "^4.20.6",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 113",
+    "safari >= 16.4"
+  ]
 }

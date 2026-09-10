@@ -3,8 +3,9 @@
 /* ---------------------------------------------------------------------------
  * Theme
  *
- * Colour tokens here are neutral placeholders. content/brand.md (Agent A) is
- * the source of truth for the palette; swap the values, keep the token names.
+ * Palette is content/brand.md §4, with the three AA-normal failures corrected
+ * (see the note beside the tokens). Token names are unchanged from the
+ * scaffold, so nothing that consumed them had to move.
  * ------------------------------------------------------------------------ */
 @theme {
   /* Hebrew-first stack. 'Heebo Variable' is self-hosted from npm
@@ -20,12 +21,45 @@
     'Arial Hebrew', 'Segoe UI', Tahoma, Arial, sans-serif;
   --font-display: var(--font-sans);
 
-  --color-ink: oklch(0.19 0.01 260);
-  --color-ink-muted: oklch(0.48 0.01 260);
-  --color-paper: oklch(0.99 0.003 90);
-  --color-paper-sunk: oklch(0.96 0.005 90);
-  --color-line: oklch(0.9 0.005 260);
-  --color-accent: oklch(0.58 0.11 250);
+  /* content/brand.md §4. Brass is an accent, not a brand colour: brand.md's
+   * ratio discipline says more than ~5% brass in a viewport stops reading as
+   * gold and starts reading as a 2011 real-estate site.
+   *
+   * Every pair below was measured, not taken from brand.md's arithmetic, and
+   * three of its values did not survive that check at AA-normal:
+   *   slate  on ink        3.19  -> --color-ink-muted-dark #879195 (5.55)
+   *   signal on limestone  4.27  -> --color-signal          #3D786A (4.55)
+   *   signal on ink        3.73  -> --color-signal-dark     #69988B (5.51)
+   * The originals are kept where they do pass (slate on limestone, 4.98). */
+  --color-ink: #12181c;
+  --color-stone: #1e2a30;
+  --color-limestone: #f4f1ec;
+  --color-brass: #b8873f;
+  --color-brass-lift: #d6a85c;
+  /* brand.md's table only ever checked brass against ink. Against the light
+   * grounds it is 2.83 on limestone and 2.55 on the sunk tone — nowhere near
+   * AA for the small numerals and links that use it. This is the accent for
+   * small TEXT on a light ground; plain --color-brass stays for fills, rules
+   * and large figures, where it is fine. */
+  --color-brass-deep: #806133;
+
+  /* Aliases the scaffold already uses, remapped onto the real palette. */
+  --color-paper: var(--color-limestone);
+  --color-paper-sunk: #eae5dc;
+  --color-ink-muted: #596971;
+  --color-line: #d8d2c8;
+  --color-accent: var(--color-brass);
+  /* Accent for small text. Flips per ground: deep on light, lifted on dark,
+     so a component never has to know which section it is sitting in. */
+  --color-accent-text: var(--color-brass-deep);
+
+  /* Dark-ground counterparts. A dark section swaps these in wholesale. */
+  --color-ink-muted-dark: #879195;
+  --color-line-dark: #2c3a41;
+
+  /* Verified/positive only — the 9.6, the 0%. Muted so it reads as a fact. */
+  --color-signal: #3d786a;
+  --color-signal-dark: #69988b;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -200,5 +234,64 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Section chrome
+ *
+ * The page alternates limestone and ink grounds. `.section-dark` swaps the
+ * muted-text and hairline tokens rather than every component knowing which
+ * ground it is sitting on.
+ * ------------------------------------------------------------------------ */
+@layer components {
+  .section-dark {
+    background-color: var(--color-ink);
+    color: var(--color-limestone);
+    --color-ink-muted: var(--color-ink-muted-dark);
+    --color-line: var(--color-line-dark);
+    --color-signal: var(--color-signal-dark);
+    --color-accent: var(--color-brass-lift);
+    --color-accent-text: var(--color-brass-lift);
+  }
+  .section-stone {
+    background-color: var(--color-stone);
+    color: var(--color-limestone);
+    --color-ink-muted: var(--color-ink-muted-dark);
+    --color-line: var(--color-line-dark);
+    --color-signal: var(--color-signal-dark);
+    --color-accent: var(--color-brass-lift);
+    --color-accent-text: var(--color-brass-lift);
+  }
+
+  /* The brass hairline that opens a section. Logical inset so it flips in RTL. */
+  .rule-brass::before {
+    content: '';
+    display: block;
+    inline-size: 3rem;
+    block-size: 2px;
+    margin-block-end: 1.25rem;
+    background-color: var(--color-brass);
+  }
+
+  /* Media boxes reserve their space before anything loads (motion.spec rule 3). */
+  .media-box {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-stone);
+  }
+  .media-box > :is(img, video) {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  /* Numerals: Hebrew text is RTL but figures read LTR. */
+  .numeral {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
   }
 }

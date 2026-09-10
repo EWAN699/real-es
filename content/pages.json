@@ -345,14 +345,6 @@
               "alt": "מבט מלמעלה על רחבת קניון מוארת, שבה תנועת הקונים מסמנת את תמהיל החנויות",
               "origin": "kling",
               "src": "/media/method/method-concourse.webp"
-            },
-            {
-              "id": "method-existing-mall",
-              "kind": "image",
-              "alt": "מרכז מסחרי גדול בשעות הערב — תצלום מהאתר הקיים של קיסר",
-              "src": "http://www.caesar.co.il/wp-content/uploads/2017/04/%D7%A7%D7%A0%D7%99%D7%95%D7%9F-%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D.jpg",
-              "origin": "original-site",
-              "credit": "מתוך אתר קיסר הקיים. לא אומת שקיסר מנהלת את הנכס שבתמונה — לאשר מול הלקוח לפני שימוש."
             }
           ],
           "motion": "pin-reveal",
@@ -451,10 +443,10 @@
           ],
           "media": [
             {
-              "id": "coverage-density",
+              "id": "coverage-coastal-spine",
               "kind": "image",
-              "alt": "מבט לילי מרחוק על מרקם עירוני צפוף, אשכולות אור חמים ההולכים ומידללים אל תוך אובך",
-              "src": "/media/coverage/coverage-density.webp",
+              "alt": "תצלום אוויר בלילה של רצועת עיור לאורך קו החוף, אשכולות אור צפופים ופחות צפופים",
+              "src": "/media/coverage/coverage-coastal-spine.webp",
               "origin": "kling"
             }
           ],
