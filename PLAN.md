@@ -32,9 +32,9 @@ No Kling job runs before the user approves `content/asset-plan.md` either way.
 ## Phases
 
 - [x] **Phase 0 — Orchestrator setup.** Contracts, agent definitions, CSV committed, dead scraper removed.
-- [ ] **Phase 1A — `ui-motion` START.** Harvest → `content/raw-harvest.json`, `brand.md`, `pages.json`, `asset-plan.md`. **Gate: user approves the asset plan.**
-- [ ] **Phase 1B — `platform` START.** Scaffold, typed loader, Lenis + `useScrollAnimation`, media script, SEO, RTL, Playwright.
-- [ ] **Phase 2 — Contract check.** `pages.json` validates through the loader. Mismatches fixed in content, not schema.
+- [x] **Phase 1A — `ui-motion` START.** Harvest → `content/raw-harvest.json`, `brand.md`, `pages.json`, `asset-plan.md`. **Gate: user approves the asset plan.**
+- [x] **Phase 1B — `platform` START.** Scaffold, typed loader, Lenis + `useScrollAnimation`, media script, SEO, RTL, Playwright.
+- [x] **Phase 2 — Contract check.** `pages.json` validates through the loader. Mismatches fixed in content, not schema.
 - [ ] **Phase 3A — Assets.** Blocked on the gate and the CDN blocker.
 - [ ] **Phase 3B — `ui-motion` END.** Sections, choreography, reduced motion, responsive, Lighthouse.
 - [ ] **Phase 3C — `platform` END.** Optimize, build, CI, deploy, `DEPLOY.md`.
@@ -72,3 +72,34 @@ that costs the demo URL from this session, not the work.
   two-agent split, the parallelism and the isolated contexts.
 - **Phase 1 launched.** Agent A (harvest, brand, `pages.json`, asset plan) and Agent B
   (scaffold, loader, hooks, tooling) running in parallel.
+
+- **Phase 1A complete and verified.** Provenance recounted independently
+  (37 harvested / 24 rewritten / 1 authored); `pages.json` validated with a real
+  Draft 2020-12 validator, 0 errors; motion presets confirmed at the contract caps.
+  Harvest is real but shallow — only the site root returned full page markdown, the
+  rest are widened SERP snippets.
+- **Asset gate passed.** User approved all seven jobs, kept the proposed palette, and
+  pinned every job to `gemini-3-pro-image` (rejecting the four-model spread). Recorded
+  in `content/asset-plan.md` §0, including the cost: job I2 loses the model picked for
+  mechanical detail and is the most likely to disappoint.
+- **CDN blocker measured, not assumed.** Job V1 Step A ran (20 credits, completed in
+  32s). Host is `s15-kling.klingai.com`; DNS resolves but the proxy refuses the
+  connection. The `s15-` prefix is a shard, so the allowlist entry must be
+  `*.klingai.com` + `klingai.com`, not the literal host. Remaining six jobs held.
+- **Phase 1B and 2 complete and verified.** Orchestrator re-ran everything rather than
+  trusting the report: `lint` 0, `typecheck` 0, `format:check` 0, `build:draft` 0
+  (7/7 pages against real content). Production `build` correctly exits 1 naming all
+  four placeholder assets. Cross-field contract rules independently re-tested — an
+  illegal preset on `faq` was caught along with the horizontal-scroll count — and
+  `pages.json` restored byte-identical.
+
+## Known gaps carried into Phase 3
+
+- **Build command during the pre-asset phase is `npm run build:draft`.** Plain
+  `npm run build` is gated and will fail until real assets land. Deploy must use
+  `npm run build`.
+- **`npm run build` passes the moment `origin` values flip** from `placeholder` to
+  `kling`. No code change needed.
+- Agent B flagged that there is no separate `/צור-קשר` route. This is by design: the
+  site is a single scroll page and `pages.json` carries a `contact` section, so the
+  form has a home. Not a gap.

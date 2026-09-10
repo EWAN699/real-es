@@ -1,0 +1,21 @@
+.next/
+node_modules/
+out/
+coverage/
+test-results/
+playwright-report/
+public/media/
+archive/
+lib/content.types.ts
+package-lock.json
+*.min.*
+
+# Not mine to reformat — the orchestrator and Agent A own these.
+contracts/
+content/
+PLAN.md
+README.md
+.claude/
+archive/
+
+lib/generated/

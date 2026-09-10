@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+ * Theme
+ *
+ * Colour tokens here are neutral placeholders. content/brand.md (Agent A) is
+ * the source of truth for the palette; swap the values, keep the token names.
+ * ------------------------------------------------------------------------ */
+@theme {
+  /* Hebrew-first stack. 'Heebo Variable' is self-hosted from npm
+   * (@fontsource-variable/heebo, imported in app/layout.tsx) — Google Fonts is
+   * not reachable from the build environment, and a webfont that only exists
+   * at a CDN is a webfont that sometimes is not there.
+   *
+   * Fallbacks are real Hebrew faces, in descending likelihood: Heebo if the
+   * OS has it, then Apple's Hebrew UI face, then Google's, then Windows'
+   * Arial Hebrew / Tahoma, then the generic stack. */
+  --font-sans:
+    'Heebo Variable', 'Heebo', 'Assistant', -apple-system, 'SF Hebrew', 'Noto Sans Hebrew',
+    'Arial Hebrew', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-display: var(--font-sans);
+
+  --color-ink: oklch(0.19 0.01 260);
+  --color-ink-muted: oklch(0.48 0.01 260);
+  --color-paper: oklch(0.99 0.003 90);
+  --color-paper-sunk: oklch(0.96 0.005 90);
+  --color-line: oklch(0.9 0.005 260);
+  --color-accent: oklch(0.58 0.11 250);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------------------
+ * Base
+ * ------------------------------------------------------------------------ */
+@layer base {
+  html {
+    /* dir="rtl" lang="he" are set in app/layout.tsx, not here — they belong to
+     * the document, and CSS cannot be relied on to carry them to the a11y tree. */
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  /* Lenis owns scrolling when it is on; native smooth-scroll fights it. */
+  html[data-lenis='on'] {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  /* Hebrew numerals and Latin fragments inside RTL text. */
+  [dir='rtl'] :is(input, textarea) {
+    text-align: start;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Motion
+ *
+ * The layout each preset needs, keyed off the `data-motion` / `data-motion-mode`
+ * attributes that hooks/useScrollAnimation stamps on the section root. A
+ * section supplies markup and child data-attributes; it never writes a
+ * reduced-motion branch of its own.
+ *
+ * Nothing here hides content. Initial hidden states are applied by GSAP, on
+ * the animated path only, so a no-JS or reduced-motion render is complete.
+ * ------------------------------------------------------------------------ */
+@layer components {
+  /* -- text-split ---------------------------------------------------------- */
+  .motion-line {
+    display: block;
+    overflow: hidden;
+  }
+  .motion-line-inner {
+    display: block;
+    will-change: transform;
+  }
+  /* Once the lines have landed, stop clipping, so a later reflow that wraps a
+     line onto two cannot hide the second one inside the mask. */
+  .motion-split-done .motion-line {
+    overflow: visible;
+  }
+
+  /* -- parallax-slow ------------------------------------------------------- */
+  /* The container must clip and hold its own height (motion.spec.md), so the
+     oversized layer never shifts layout. */
+  [data-motion='parallax-slow'] {
+    position: relative;
+    overflow: hidden;
+  }
+  [data-motion='parallax-slow'][data-motion-mode='animated'] [data-motion-parallax] {
+    position: absolute;
+    inset-block: -15%;
+    inset-inline: 0;
+    block-size: 130%;
+    will-change: transform;
+  }
+  [data-motion='parallax-slow'] [data-motion-parallax] :is(img, video) {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  /* -- pin-reveal ---------------------------------------------------------- */
+  /* Put the states in a grid so the animated path can stack them in one cell
+     and the static path lets them flow as ordinary rows. */
+  .motion-steps {
+    display: grid;
+    gap: 2rem;
+  }
+  [data-motion='pin-reveal'][data-motion-mode='animated'] [data-motion-step] {
+    grid-area: 1 / 1;
+  }
+  [data-motion='pin-reveal'][data-motion-mode='animated'] .motion-steps {
+    gap: 0;
+  }
+
+  /* -- horizontal-scroll --------------------------------------------------- */
+  [data-motion='horizontal-scroll'] [data-motion-viewport] {
+    overflow: hidden;
+  }
+  [data-motion='horizontal-scroll'] [data-motion-track] {
+    display: flex;
+    flex-wrap: nowrap;
+    will-change: transform;
+  }
+  /* Degraded path: an ordinary swipeable overflow row, per motion.spec.md
+     rule 1. Still snaps, still reachable by keyboard, still shows progress. */
+  [data-motion='horizontal-scroll'][data-motion-mode='static'] [data-motion-viewport] {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  [data-motion='horizontal-scroll'][data-motion-mode='static'] [data-motion-track] {
+    transform: none !important;
+  }
+  [data-motion='horizontal-scroll'][data-motion-mode='static'] [data-motion-track] > * {
+    scroll-snap-align: start;
+  }
+
+  /* -- progress indicator -------------------------------------------------- */
+  /* useScrollAnimation writes --motion-progress (0..1) on the section root for
+     every scrubbed preset, in both animated and static modes. */
+  .motion-progress {
+    --motion-progress: 0;
+    position: relative;
+    block-size: 2px;
+    background-color: var(--color-line);
+  }
+  .motion-progress::after {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: calc(var(--motion-progress, 0) * 100%);
+    background-color: var(--color-accent);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Reduced motion — the safety net.
+ *
+ * useScrollAnimation already refuses to build triggers here. This kills any
+ * CSS transition or animation that slips past it. Not a substitute for the
+ * hook: a belt for the braces.
+ * ------------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
