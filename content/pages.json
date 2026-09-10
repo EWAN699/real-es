@@ -40,9 +40,10 @@
             {
               "id": "hero-loop",
               "kind": "video",
-              "alt": "מפתח בודד מונח על שולחן עץ כהה במשרד, ומאחוריו השתקפות רכה של חזית בניין מגורים",
+              "alt": "מפתח בודד מונח על שולחן עץ כהה, ומאחוריו זוהר רך ומטושטש של חלונות מוארים בחזית בניין מגורים",
               "poster": "/media/hero/hero-loop-poster.webp",
-              "origin": "placeholder"
+              "origin": "kling",
+              "src": "/media/hero/hero-loop.mp4"
             }
           ],
           "cta": {
@@ -214,7 +215,15 @@
               }
             }
           ],
-          "media": [],
+          "media": [
+            {
+              "id": "services-corridor",
+              "kind": "image",
+              "alt": "מסדרון שירות בבניין מסחרי — לוח מונים ותשתיות, מואר בתאורת עבודה",
+              "src": "/media/services/services-corridor.webp",
+              "origin": "kling"
+            }
+          ],
           "motion": "horizontal-scroll",
           "provenance": {
             "source": "harvested",
@@ -269,7 +278,15 @@
               }
             }
           ],
-          "media": [],
+          "media": [
+            {
+              "id": "numbers-lit-windows",
+              "kind": "image",
+              "alt": "בניין מגורים בשעת דמדומים, חלק גדול מחלונותיו מוארים",
+              "src": "/media/numbers/numbers-lit-windows.webp",
+              "origin": "kling"
+            }
+          ],
           "motion": "fade-up",
           "provenance": {
             "source": "authored",
@@ -326,7 +343,8 @@
               "id": "method-concourse",
               "kind": "image",
               "alt": "מבט מלמעלה על רחבת קניון מוארת, שבה תנועת הקונים מסמנת את תמהיל החנויות",
-              "origin": "placeholder"
+              "origin": "kling",
+              "src": "/media/method/method-concourse.webp"
             },
             {
               "id": "method-existing-mall",
@@ -511,7 +529,8 @@
               "id": "package-before-after",
               "kind": "image",
               "alt": "סלון דירה מצולם מאותה נקודה לפני ואחרי שיפוץ, עם תפר אנכי חד בין שני המצבים",
-              "origin": "placeholder"
+              "origin": "kling",
+              "src": "/media/package/package-before-after.webp"
             }
           ],
           "motion": "pin-reveal",
@@ -669,7 +688,8 @@
               "id": "consult-dusk",
               "kind": "image",
               "alt": "בניין מגורים בשעת דמדומים, חלק מחלונותיו מוארים",
-              "origin": "placeholder"
+              "origin": "kling",
+              "src": "/media/consult/consult-dusk.webp"
             }
           ],
           "cta": {

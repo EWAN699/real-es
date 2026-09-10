@@ -15,19 +15,18 @@ here so the reasoning is not lost:
 | --- | --- | --- |
 | Firecrawl scrapes every page | The connector exposes only `firecrawl_search` — no scrape, crawl or map tool. Direct egress is blocked (`EGRESS_BLOCKED`; `curl` returns `HTTP 000` for every host). | `firecrawl_search` with `includeDomains` + `highlights`, which returns real page markdown from Firecrawl's servers. Seeded by `archive/source/homepage-webscraper.csv`. |
 | Vercel MCP deploys | Not installed. Connectors are Firecrawl, klingai, Macaly Cloud, github. | Macaly Cloud. |
-| Kling assets download to disk | Kling MCP traffic reaches Anthropic's servers, but result URLs sit on a CDN this session cannot fetch. | **Unresolved.** See the blocker below. |
+| Kling assets download to disk | Kling MCP traffic reaches Anthropic's servers; result URLs sit on `*.klingai.com`. | **Resolved in Phase 3A.** The user allowlisted the domain between sessions; all seven assets downloaded. |
 
-## Open blocker — Kling asset download
+## Closed blocker — Kling asset download
 
-Kling returns assets as CDN URLs that expire in ~24h, and this session has no egress to
-fetch them. Phase 3A therefore runs **one** image first, reports the CDN host, and stops.
-Resolution options, user's call:
+**Resolved.** The `*.klingai.com` + `klingai.com` allowlist entry was in place at the
+start of this session. Re-measured rather than assumed: `klingai.com` returned 301
+(was 000) and the 24-hour-old V1 Step A result URL still returned 200 and 4.7 MB, so
+no job was paid for twice.
 
-1. Add that host to the environment's Custom allowed domains and start a new session.
-2. The user downloads the assets and pushes them.
-3. Ship with the imagery already on the existing site, and skip Kling.
-
-No Kling job runs before the user approves `content/asset-plan.md` either way.
+The shard warning in the last session's note was right. Results came back on
+`s15-kling`, `s16-kling` and `v15-kling` — allowlisting the single literal host would
+have failed about half the downloads.
 
 ## Phases
 
@@ -35,7 +34,7 @@ No Kling job runs before the user approves `content/asset-plan.md` either way.
 - [x] **Phase 1A — `ui-motion` START.** Harvest → `content/raw-harvest.json`, `brand.md`, `pages.json`, `asset-plan.md`. **Gate: user approves the asset plan.**
 - [x] **Phase 1B — `platform` START.** Scaffold, typed loader, Lenis + `useScrollAnimation`, media script, SEO, RTL, Playwright.
 - [x] **Phase 2 — Contract check.** `pages.json` validates through the loader. Mismatches fixed in content, not schema.
-- [ ] **Phase 3A — Assets.** Blocked on the gate and the CDN blocker.
+- [x] **Phase 3A — Assets.** 7 jobs run, 6 shipped, 1 rejected (I5 — see below). Production `npm run build` now passes.
 - [ ] **Phase 3B — `ui-motion` END.** Sections, choreography, reduced motion, responsive, Lighthouse.
 - [ ] **Phase 3C — `platform` END.** Optimize, build, CI, deploy, `DEPLOY.md`.
 - [ ] **Phase 4 — Verification.** Orchestrator re-runs build and Lighthouse independently.
@@ -103,3 +102,32 @@ that costs the demo URL from this session, not the work.
 - Agent B flagged that there is no separate `/צור-קשר` route. This is by design: the
   site is a single scroll page and `pages.json` carries a `contact` section, so the
   form has a home. Not a gap.
+
+## Phase 3A — complete, with one asset held
+
+- **All seven jobs ran; 180 credits spent, 343 left.** Six are shipped and optimized
+  inside their size ceilings. Every result was downloaded the moment it completed, so
+  the 24h URL expiry is no longer a risk to anything.
+- **Production build passes.** `npm run build` previously exited 1 naming four
+  placeholder assets; all four are now `origin: "kling"` with real files behind them.
+  `lint`, `typecheck`, `format:check` and `validate:content` are all clean
+  (7 media assets, 11 sections).
+- **The hero needed two post-fixes, neither a resubmission.** Kling returned
+  1928×1072 rather than the contracted 1920×1080 (scaled and centre-cropped, no
+  distortion), and the raw clip did not loop — fixed with the crossfade the asset plan
+  had already prescribed for exactly this case. The seam was then measured, not
+  assumed: 1.14 mean pixel difference at the loop point versus 3.82 for ordinary
+  in-shot motion.
+- **Three model defaults would have violated the contract** and were pinned:
+  `resolution` (4k → 1080p), `prefer_multi_shots` (true → false, which would have cut
+  the single-shot brief into multiple shots) and `enable_audio`.
+- **I5 (`coverage`) rejected and held for the user.** It produced a recognisable
+  satellite map of the Levant — Dead Sea, Sea of Galilee and Jordan Rift all legible —
+  which is the exact outcome its "no recognisable coastline shape" clause existed to
+  prevent. Not re-run: `contracts/assets.md` forbids resubmitting after a bad result
+  without asking. Nothing is gated on it; `coverage` keeps `media: []`.
+- **One pipeline defect fixed.** `public/media/README.md` says to drop originals into
+  `public/media/` and run the optimizer, which left 31 MB of source PNGs staged inside
+  `public/` where they would be committed and served. Raw source extensions under
+  `public/media/` are now gitignored; only the derivatives ship. Worth folding into
+  the script properly in 3C so it reads from `assets/source/` instead.

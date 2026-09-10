@@ -25,6 +25,13 @@ screenshots/
 # media sources (originals are large; shipped derivatives live in public/media/)
 assets/source/
 
+# raw generator output staged under public/media/ for `npm run media:optimize`.
+# Only the derivatives it writes (.webp/.avif/.mp4/.webm/-poster.webp) ship.
+public/media/**/*.png
+public/media/**/*.tif
+public/media/**/*.tiff
+public/media/**/*.mov
+
 # misc
 *.log
 .DS_Store
