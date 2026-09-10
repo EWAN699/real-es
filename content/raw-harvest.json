@@ -1,0 +1,674 @@
+{
+  "meta": {
+    "target": "https://www.caesar.co.il/",
+    "company": "קיסר ניהול נכסים (קבוצת קיסר)",
+    "harvestedBy": "ui-motion (Agent A)",
+    "harvestedAt": "2026-09-10",
+    "method": {
+      "tool": "mcp__Firecrawl__firecrawl_search",
+      "params": {
+        "includeDomains": ["www.caesar.co.il"],
+        "highlights": true
+      },
+      "searchCalls": 29,
+      "note": "WebFetch and curl are blocked in this environment (EGRESS_BLOCKED / HTTP 000). firecrawl_search was the only route. Full page markdown came back reliably only for the site root; every other URL returned a Google-style SERP snippet in `description`. Snippets were widened by re-querying the same page with different long-tail phrases. Fragments are therefore partial page copy, not complete pages — the trailing ellipsis in a fragment is the snippet truncation, not the site's."
+    },
+    "seedFile": "archive/source/homepage-webscraper.csv",
+    "distinctUrlsWithContent": 52,
+    "fragmentCount": 70
+  },
+  "fragments": [
+    {
+      "id": "about-brand-decade",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/",
+      "pageTitle": "קבוצת קיסר – ניהול נכסים פתרונות בניה ועסקים",
+      "kind": "body",
+      "markdown": "#### לקוחות יקרים,\nאודות קבוצת קיסר\n\nקבוצת קיסר – הנו מותג ידוע ומוכר בתחומו אשר נבנה במשך מעל עשר שנים. החברה מתמחה בתחום העסקים והנדל\"ן המלא.\n\n1. המחלקה לניהול נכסים\n2. בניה-ניהול-יזמות",
+      "note": "Rendered on the homepage as the About teaser block; the third division (יזמות עסקים והשקעות) appears in the nav and in the English page."
+    },
+    {
+      "id": "about-scope",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/",
+      "pageTitle": "קבוצת קיסר – ניהול נכסים פתרונות בניה ועסקים",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר מתמחה גם בהשבחה ועיצוב בתים, ניהול כל סוגי הנכסים וכולל מתחמי ומגורי יוקרה, בניינים מגורים ומסחר, מרכזים מסחריים, שטחים ומבנים מסחריים, בתי מלון, …"
+    },
+    {
+      "id": "about-specialisation",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/",
+      "pageTitle": "קבוצת קיסר – ניהול נכסים פתרונות בניה ועסקים",
+      "kind": "serp-snippet",
+      "markdown": "מתמחה בשיווק ניהול והשבחה של כל סוגי הנכסים למכירה, להשכרה או להשקעה ו/או יוקרה וכולל שיווק פרויקטים חדשים למגורים ונדל\"ן מסחרי, בשיטות עבודה ייחודיות ומתקדמת …"
+    },
+    {
+      "id": "ceo-letter",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/%D7%93%D7%91%D7%A8-%D7%94%D7%9E%D7%A0%D7%9B%D7%9C/",
+      "pageTitle": "דבר המנכ\"ל – קיסר שיווק ניהול נכסים, מגורים ומסחריים",
+      "kind": "serp-snippet",
+      "markdown": "החברה מתמחה בניהול ושיווק כל סוגי הנכסים (ניהול נכסים) החל מדירות פרטיות מכירה והשכרה, בתי דירות יוקרה, ועד לניהול מתחמי ומגורי יוקרה מגדלי בנייני משרדים, …"
+    },
+    {
+      "id": "experts-300",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%95%D7%9E%D7%97%D7%99%D7%9D-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94/",
+      "pageTitle": "חברה ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר ניהול נכסים ואחזקה קיימת מעל עשור והיא מנהלת מעל 300 נכסים מכל הסוגים בהצלחה רבה. ההתמחות של קיסר היא להוריד את כל כאבי הראש מבעל הנכס …"
+    },
+    {
+      "id": "maint-pair-headache",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%94-%D7%95%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%98%D7%95%D7%91%D7%99%D7%9D-%D7%94%D7%A9%D7%A0%D7%99%D7%99%D7%9D-%D7%9E%D7%99%D7%9F-%D7%94%D7%90/",
+      "pageTitle": "אחזקה וניהול נכסים | קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "ההתמחות של קיסר היא להוריד את כל כאבי הראש מבעל הנכס ולבצע את כל הניהול של הנכס במקצועיות ובשלמות, במקום בעל הנכס וללא שום תשלום. לקיסר ידע …"
+    },
+    {
+      "id": "total-management",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%A0%D7%99%D7%91%D7%99%D7%9D-%D7%9C%D7%9A-%D7%99%D7%95%D7%AA%D7%A8-%D7%91%D7%A9%D7%99%D7%98%D7%AA-%D7%94%D7%9E%D7%95%D7%A9%D7%9C%D7%9E%D7%AA/",
+      "pageTitle": "נכסים מניבים לך יותר – בשיטת המושלמת",
+      "kind": "serp-snippet",
+      "markdown": "שיטת Total management, שהיא לדעת רבים שיטת הניהול המושלמת, מאפשרת לבעלי נכסים מניבים לרכז את כל השירותים שחשובים עבורם תחת קורת גג אחת. כאשר …"
+    },
+    {
+      "id": "total-management-premium",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%95%D7%9E%D7%97%D7%99%D7%9D-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94/",
+      "pageTitle": "חברה ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "שיטת Total management מאפשרת לבעלי נכסים לנהל אותם יחד עם שירותי פרימיום כמו שירותי קונסיירז', פרסום ושיווק לקראת מכירה או השכרה, אחזקה וניקיון, …"
+    },
+    {
+      "id": "method-lean",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%95%D7%9E%D7%97%D7%99%D7%9D-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94/",
+      "pageTitle": "חברה ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "שיטת הניהול של קיסר מבוססת בין היתר על ניהול מושלם, יצירתי, רזה, יעיל, ומתקדם! בסקר האחרון שנועד למדוד את רמת השירות בחברה שנערך ע\"פ …"
+    },
+    {
+      "id": "method-nationwide",
+      "sourceUrl": "https://www.caesar.co.il/listing/%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%9E%D7%A8%D7%9B%D7%96%D7%99-2/",
+      "pageTitle": "ניהול מרכזים מסחריים בהרצליה | חברה לניהול נכסים בהרצליה | אחזקת מבנים",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר שיווק אחזקה וניהול נכסים מתמחה בניהול ושיווק של כל סוגי הנכסים ללא תשלום ובפריסה ארצית.\nשיטת הניהול של קיסר מבוססת בין היתר על ניהול מושלם, יצירתי, …"
+    },
+    {
+      "id": "eleven-years-300",
+      "sourceUrl": "https://www.caesar.co.il/httpwww-caesar-co-ilproperty_location%D7%94%D7%A9%D7%A8%D7%95%D7%9F-%D7%95%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94headeranchor/",
+      "pageTitle": "חברה מומלצת לניהול נכסים ודירות בהרצליה זה קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר ניהול ושיווק נכסים קיימת 11 שנה בפריסה ארצית ומנהלת מעל 300 דירות נכסים ובניינים בישראל בהצלחה רבה. בסקר האחרון ע\"פ חשבוניות ברצף …"
+    },
+    {
+      "id": "values-transparent",
+      "sourceUrl": "https://www.caesar.co.il/%D7%97%D7%91%D7%A8%D7%94-%D7%9E%D7%95%D7%9E%D7%9C%D7%A6%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%95%D7%A0/",
+      "pageTitle": "חברה מומלצת לניהול נכסים | אחזקת מבנים | ניהול דירות להשכרה בתל אביב",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר ניהול ושיווק נכסים קיימת 11 שנה בפריסה ארצית ומנהלת מעל 300 דירות נכסים ובניינים בישראל בהצלחה רבה. קיסר דוגלת בשירות אישי, ישר, שקוף …"
+    },
+    {
+      "id": "service-247",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D-%D7%9E%D7%A0%D7%94%D7%9C%D7%AA-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/",
+      "pageTitle": "קיסר ניהול נכסים בירושלים מנהלת את כל סוגי הנכסים בירושלים",
+      "kind": "serp-snippet",
+      "markdown": "קיסר מעניקה ללקוחותיה שירות מושלם 24/7 הכולל את כל הטיפולים הכרוכים בשיווק וטיפול בנכס, כל זאת ללא תשלום של דמי ניהול ו/או עמלות תיווך. קיסר …"
+    },
+    {
+      "id": "home-services-grid",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "#### תחומי ניהול בפריסה ארצית\n\nניהול תמ״א 38\nניהול ואחזקת נכסים מבנים מסחריים\nניהול ושיווק פרויקטים חדשים\nליווי משקיעים עד הרווח\nניהול נכסים למכירה\nניהול נכסים להשכרה\nועוד…\nדרושים זכיינים ושותפים להצלחה\nניהול קידום וליווי עסקים ויזמים\nניהול והשבחת נכסים בתל אביב\nניהול פרויקטים ופיקוח בניה\nניהול פינוי בינוי\n\nכל שירות שתבחר יהיה מושלם וללא תשלום.",
+      "note": "The homepage tile grid. Tile labels are broken across two lines in the markup; joined here."
+    },
+    {
+      "id": "home-cta-block",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "לייעוץ אישי ללא התחייבות:\n\n1599-556655 | 052-5416313 | info@caesar.co.il\n\nאו מלא/י את פרטייך וניצור עימך קשר בהקדם:"
+    },
+    {
+      "id": "home-testimonials-heading",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "#### מה הלקוחות אומרים עלינו"
+    },
+    {
+      "id": "home-facebook-block",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "#### הצטרפו אלינו ב- Facebook\n\nקיסר שיווק נדל\"ן, ניהול נכסים מניבים, אחזקת מבנים קניונים מרכזים מסחריים\n\n1,979 followers",
+      "note": "Facebook page embed on the homepage. Page name doubles as a plain-language description of the business."
+    },
+    {
+      "id": "home-facebook-commercial",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "_חדשות קיסר מסחריים:_\n\n🔹 _למכירה_\n🔹️ עסקאות קומבינציה\n🔹️ מגרשים גדולים לדאטה סנטר\n🔹️ מבחר מלונות למכירה במיקומי פריים\n🔹️ מגרשים לבניית בנייני בוטיק גם בקו הים\n🔹️ קניונים מרכזים ועסקאות תשואה\n🔹️ מבחר שטחים ללוגיסטיקה\n🔹️ מבחר בתי אבות וסיעודי\n\n_נקודות חשובות:_\n🔹️ התאמה מקצועית.\n🔹️ ע\"פ אפיון מדויק.\n🔹️ מבחר מדהים של נכסים במחירי מציאה!!!\n\n📞 קיסר מסחריים - מומחים לשיווק וניהול מסחריים",
+      "note": "Social copy, not site body copy. Shows the current commercial focus (data-centre plots, hotels, logistics, care homes) — useful for tone, risky to lift as site copy."
+    },
+    {
+      "id": "home-nav",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "nav",
+      "markdown": "דף הבית · ממליצים קיסר · אודות קבוצת קיסר (דבר המנכ\"ל, קיסר בתקשורת, זכיינים בקיסר, מועדון לקוחות, דרושים, קישורים שימושיים) · ניהול נכסים (ניהול נכסים | ניהול נדל\"ן, ניהול נכסים | שיווק נכסים, רוצה לדעת כמה הדירה שלך שווה?, ניהול דירות להשקעה וליווי משקיעים, ניהול נכסים בתל אביב והשבחה, שיווק פרויקטים חדשים למגורים, ניהול נכסים מסחריים | אחזקת מבנים, ניהול נכסים נכס החודש, רילוקשיין לארץ ישראל, ניהול נכסים דירות שאלות ותשובות, ניהול נכסים הנכסים שלנו) · ניהול בניה ויזמות (ניהול פינוי בינוי, ניהול קבוצת בעלי זכויות בפרויקט, ניהול תמ\"א 38, שיפוצים כלליים, פרויקט החודש, פרויקטים) · יזמות עסקים והשקעות (קיסר בעסקים למי זה מתאים?, מועדון משקיעים, קרן קיסר, קיסר בעסקים ההשקעות שלנו, קיסר בעסקים שאלות ותשובות) · כל הנכסים · בלוג · מה חדש · צור קשר",
+      "note": "Full information architecture, reconstructed from several homepage renders (the nav is randomised/partial per render)."
+    },
+    {
+      "id": "home-title-variants",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "meta",
+      "markdown": "קיסר ניהול נכסים\nניהול נכסים בחינם | ניהול שיווק כל סוגי הנכסים | ניהול נכסים",
+      "note": "Two <title> variants observed for the homepage across renders."
+    },
+    {
+      "id": "package-headings",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%A9%D7%9B%D7%A8%D7%94-%D7%94%D7%97%D7%91%D7%99%D7%9C%D7%94-%D7%A9%D7%9C%D7%A0%D7%95/",
+      "pageTitle": "ניהול נדל\"ן - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "שיווק וניהול כל סוגי הנכסים בכל הארץ: השכרה ומכירה ללא דמי ניהול ועמלות תיווך\n· למה כדאי לקחת חברה לניהול נכסים ?\n· מה החבילה שלנו כוללת?\n· מצד אחד מקבלים …"
+    },
+    {
+      "id": "package-zero-commission",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%A9%D7%9B%D7%A8%D7%94-%D7%94%D7%97%D7%91%D7%99%D7%9C%D7%94-%D7%A9%D7%9C%D7%A0%D7%95/",
+      "pageTitle": "ניהול נדל\"ן - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "למה כדאי לקחת חברה לניהול נכסים ? ולמה דווקא אנחנו? כי אצלנו אתה מקבל שירות מ א-ת הכולל את הטיפול הטוב ביותר לניהול הנכס שלך ב. 0% עמלות תיווך ודמי ניהול. 100…"
+    },
+    {
+      "id": "hub-no-fees",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "ללא דמי ניהול ו/או עמלות תיווך במכירה ובהשכרה…זה פשוט מקצועי ומושלם… כדי לדעת מה החבילה המלאה שלנו לניהול נכסים שלך כוללת עליכם לעבור לדף הבא על ידי לחיצה כאן …"
+    },
+    {
+      "id": "faq-brokerage",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%95%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA/",
+      "pageTitle": "ניהול נכסים דירות שאלות ותשובות",
+      "kind": "serp-snippet",
+      "markdown": "יש לי דירה למכירה האם אני משלמת תיווך??? ואיך אני מפרסמים את הנכס למכירה??? לשמחתי איננו חברת תיווך אלה חברה לניהול נכסים ולקוחותינו אינם משלמים תיווך ו/או דמי …"
+    },
+    {
+      "id": "valuation-service",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A8%D7%95%D7%A6%D7%94-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9B%D7%9E%D7%94-%D7%94%D7%93%D7%99%D7%A8%D7%94-%D7%A9%D7%9C%D7%9A-%D7%A9%D7%95%D7%95%D7%94/",
+      "pageTitle": "רוצה לדעת כמה הדירה שלך שווה? - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "שירות חדש וללא תשלום. רוצה לדעת כמה הנכס שלך שווה? מלא את הטופס צרף תמונה ונציגנו ישוב אליך בהקדם עם הערכת שווי של נכסך. ללא שום התחייבות!"
+    },
+    {
+      "id": "tlv-uplift-package",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%94%D7%A9%D7%91%D7%97%D7%AA-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/",
+      "pageTitle": "ניהול נכסים בתל אביב בחינם",
+      "kind": "serp-snippet",
+      "markdown": "זהו עוד שירות ייחודי מושלם מקיף וללא תשלום, מבית היוצר של קיסר ניהול נכסים למען הלקוח: יש לך דירה בתל אביב ? קבל חבילת ניהול נכסים והשבחה חינם ללא תשלום! אתה מוזמן לקבל חבילה מושלמת לדירה שלך הכוללת שיפוץ עיצוב אדריכלי ריהוט מושלם וחבילת לניהול …"
+    },
+    {
+      "id": "tlv-rent-guarantee",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%A9%D7%9B%D7%A8%D7%94-%D7%94%D7%97%D7%91%D7%99%D7%9C%D7%94-%D7%A9%D7%9C%D7%A0%D7%95/",
+      "pageTitle": "ניהול נכסים בתל אביב בחינם",
+      "kind": "serp-snippet",
+      "markdown": "בנוסף תקבלו בכל חודש את שכר הדירה המגיע לכם, גם שהדירה שלכם תעמוד ריקה ללא שוכרים, בנוסף החברה תעניק לכם \"חבילת ניהול נכסים מלאה\" (ראה סעיף החבילה שלנו בניהול …",
+      "note": "Rent-guarantee claim. Surfaced under the TLV uplift page URL in one render and the package page in another; treat the attribution as approximate."
+    },
+    {
+      "id": "service-catalogue-a",
+      "sourceUrl": "https://www.caesar.co.il/listing/%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%90%D7%97%D7%96%D7%A7%D7%94-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%A0%D7%99%D7%91%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D/",
+      "pageTitle": "ניהול נכסים מניבים קניונים",
+      "kind": "serp-snippet",
+      "markdown": "ניהול נכסים של תושבי ומשקיעי חוץ. ניהול נכסים פנויים. ניהול נכסים לרילוקיישן. ניהול והשכרת נכסים לתקופות קצרות. ניהול נכסים של אוכלוסיית גיל הזהב. ניהול דירות …"
+    },
+    {
+      "id": "service-catalogue-b",
+      "sourceUrl": "https://www.caesar.co.il/listing/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D-%D7%9E%D7%A6%D7%99%D7%A2-%D7%9C%D7%9E%D7%9B%D7%99%D7%A8%D7%94-%D7%90%D7%95-%D7%9C%D7%94/",
+      "pageTitle": "ניהול נכסים ובתים בירושלים",
+      "kind": "serp-snippet",
+      "markdown": "ניהול והשכרת נכסים לתקופות קצרות. ניהול נכסים של אוכלוסיית גיל הזהב. ניהול דירות עיזבון. ניהול משרדים וחנויות. ניהול דירות להשקעה. ניהול תיקי השקעות למשקיעים …"
+    },
+    {
+      "id": "service-catalogue-c",
+      "sourceUrl": "https://www.caesar.co.il/listing/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%97%D7%99%D7%A4%D7%94-%D7%9E%D7%A6%D7%99%D7%A2/",
+      "pageTitle": "דירות להשקעה בחיפה - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "ניהול משרדים וחנויות. ניהול דירות לתקופות קצרות לטווח קצר. ניהול דירות להשקעה. ניהול תיקי השקעות למשקיעים בדירות להשקעה. השבחת נכסים וניהולם. ניהול חניונים, …"
+    },
+    {
+      "id": "service-catalogue-d",
+      "sourceUrl": "https://www.caesar.co.il/listing/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94-%D7%94%D7%9E%D7%95%D7%91%D7%99%D7%9C%D7%94-%D7%9C%D7%90%D7%97%D7%96%D7%A7%D7%94-%D7%A0%D7%99/",
+      "pageTitle": "ניהול קניונים | אחזקת מבנים | ניהול מרכזים מסחריים",
+      "kind": "serp-snippet",
+      "markdown": "אחזקת וניהול נכסים מניבים; ניהול מתחמים של דירות יוקרה, מגורי יוקרה, מגדלים מגורים, מתחמי מגורים; אחזקה וניהול קניונים, מרכזים שטחים מבנים מסחריים מכל הסוגים …"
+    },
+    {
+      "id": "haifa-long-list",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%97%D7%99%D7%A4%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%91/",
+      "pageTitle": "ניהול נכסים בחיפה",
+      "kind": "serp-snippet",
+      "markdown": "הרשימה הארוכה כוללת גם שיווק ופרסום של הדירה, גם שירות של שיפוץ ועיצוב הדירה, גם הכנת הדירה להשכרה או למכירה עתידית, גם שירותי שמירה על הדירה, …"
+    },
+    {
+      "id": "commercial-engineering",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D/",
+      "pageTitle": "ניהול נכסים מסחריים | אחזקת מבנים",
+      "kind": "serp-snippet",
+      "markdown": "ניהול נכסים, אחזקת מבנים ממוחשב ומתקדם הכולל ליווי הנדסי מחקרי שיווקי החל משלב הקרקע ועד לשלב הקמת המבנים או המרכזים המסחריים בשיטת הניהול המושלם, ע\"פ אפיון …"
+    },
+    {
+      "id": "malls-decade",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D-%D7%90%D7%A4%D7%A9%D7%A8-%D7%9C%D7%99%D7%96%D7%95%D7%9D-%D7%91%D7%A9%D7%A7%D7%98/",
+      "pageTitle": "ניהול קניונים מסחריים | קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר ניהול נכסים מניבים הנה חברה המתמחה בתחום ניהול הקניונים. זה למעלה מעשור שהחברה מספקת שירותי ניהול, אחזקה ושיווק לקניונים ומתחמים …"
+    },
+    {
+      "id": "malls-tenant-mix",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D-%D7%9E%D7%A8%D7%9B%D7%96/",
+      "pageTitle": "ניהול קניונים מרכזים מסחריים - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "תפקידה של חברת ניהול מקצועית הוא בין היתר שיווק שטחים מסחריים בקניון המרכז המסחרי ו/או הנכסים מניבים. זה מתחיל בשיווק הנכסים ויצירת תמהיל נכון …"
+    },
+    {
+      "id": "malls-recommended",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D-%D7%9E%D7%A8%D7%9B%D7%96/",
+      "pageTitle": "ניהול קניונים מרכזים מסחריים - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "חברה מומלצת ומקצועית לניהול נכסים ואחזקת מבנים, ניהול קניונים, מרכזים מסחריים, נכסים מניבים, שאתם חייבים להכיר: יזמים יקרים החלטתם לרכוש קרקע …"
+    },
+    {
+      "id": "malls-fee-15",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D/",
+      "pageTitle": "ניהול קניונים | ניהול מרכזי קניות | ניהול נכסים מניבים | ניהול מרכזים מסחריים",
+      "kind": "serp-snippet",
+      "markdown": "העלות של ניהול קניונים משתנה על פי השירותים הכלולים ואופי הקניון. ישנם מנהלי נכסים אשר גובים עד לכ-15% אחוזים כדמי ניהול קניון והשירותים שלהם …"
+    },
+    {
+      "id": "choose-maintenance",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%99%D7%9A-%D7%91%D7%95%D7%97%D7%A8%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%AA-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%A7%D7%A0/",
+      "pageTitle": "איך בוחרים חברה לניהול ואחזקת מבנים קניונים מרכזים מסחריים?",
+      "kind": "serp-snippet",
+      "markdown": "חברים בואו לא נקל ראש בחירת חברה רצינית ואחראית שתשמר את הנכסים שלנו, תשביח אותם, תשיא את הרווחיות של בעל הנכס ותקטין משמעותית את ההוצאות. חברה …"
+    },
+    {
+      "id": "towers-quality",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%99%D7%9A-%D7%91%D7%95%D7%97%D7%A8%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%94-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%9E%D7%92%D7%93%D7%9C%D7%99-%D7%9E%D7%92%D7%95%D7%A8%D7%99%D7%9D-%D7%9E%D7%AA/",
+      "pageTitle": "איך בוחרים חברה לניהול מגדלי מגורים, מתחמי מגורי יוקרה?",
+      "kind": "serp-snippet",
+      "markdown": "התוצאה איכות חיים הרבה יותר גבוהה ומתן שירותים מקצועיים תוך ייקור ממשי לדיירי המגדל, שצריכים לשלם דמי ניהול יותר גבוהים בגין עבודת חברת הניהול."
+    },
+    {
+      "id": "maint-faq-questions",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%9B%D7%9C-%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%97%D7%A9%D7%91%D7%AA-%D7%9C%D7%A9%D7%90%D7%95%D7%9C/",
+      "pageTitle": "אחזקת וניהול מבנים מרכזים | קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "אחזקת מבנים – כל השאלות שלא חשבת לשאול …\nמה כוללים שירותיהם של מנהלי נכסים?\nהאם השירותים של כל מנהלי הנכסים דומים?\nמה היא ההכשרה של מנהל נכסים?"
+    },
+    {
+      "id": "maint-faq-answer",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%9B%D7%9C-%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%97%D7%A9%D7%91%D7%AA-%D7%9C%D7%A9%D7%90%D7%95%D7%9C/",
+      "pageTitle": "אחזקת וניהול מבנים מרכזים | קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "מנהל נכסים מקצועי אשר מחזיק בניסיון יודע כיצד לשמור על יחסים טובים עם השוכרים, להסדיר את תשלומי שכר הדירה והחשבונות ולוודא שהנכס עומד בכל …"
+    },
+    {
+      "id": "switch-ten-signs",
+      "sourceUrl": "https://www.caesar.co.il/%D7%91%D7%91%D7%A2%D7%9C%D7%95%D7%AA%D7%9B%D7%9D-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%90%D7%AA%D7%9D-%D7%97%D7%99%D7%99%D7%91%D7%99%D7%9D-%D7%9C%D7%94%D7%97%D7%9C%D7%99%D7%A3-%D7%90%D7%AA-%D7%94%D7%97/",
+      "pageTitle": "בבעלותכם נכסים? אתם חייבים להחליף את החברה לניהול נכסים שלכם",
+      "kind": "serp-snippet",
+      "markdown": "בבעלותכם נכסים? עשרת הסימנים שאתם חייבים להחליף את המנהל נכסים שלכם, או איך נזהה מנהל נכסים חאפר? שפר עליכם מזלכם וירשתם דירות נכסים להשקעה?"
+    },
+    {
+      "id": "principles",
+      "sourceUrl": "https://www.caesar.co.il/%D7%9B%D7%99%D7%A6%D7%93-%D7%9C%D7%94%D7%A6%D7%9C%D7%99%D7%97-%D7%91%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A2%D7%A7%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%98%D7%99%D7%A4/",
+      "pageTitle": "כיצד להצליח בניהול נכסים: עקרונות וטיפים לניהול נכסים בישראל",
+      "kind": "serp-snippet",
+      "markdown": "כדי להצליח בניהול נכסים, חשוב לשמור על תכנון וניהול כלכלי יעיל, לשקול ולנהל פעולות תחזוקה בצורה מקצועית ולשקול מדיניות מחירים תחרותית. בנוסף, …"
+    },
+    {
+      "id": "guide-tlv-steps",
+      "sourceUrl": "https://www.caesar.co.il/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%9E%D7%A7%D7%99%D7%A3-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/",
+      "pageTitle": "מדריך מקיף לניהול נכסים בתל אביב",
+      "kind": "serp-snippet",
+      "markdown": "כדי להצליח בניהול נכסים בתל אביב, חשוב לעקוב אחרי הטיפים הבאים: 1. שמירה על תיעוד מדויק של כל העסקאות והתיקים הנדרשים. 2. ניהול כספים אפקטיבי …"
+    },
+    {
+      "id": "investors-personal",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%93%D7%99%D7%A8%D7%94-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%AA%D7%99%D7%A7-%D7%94%D7%A9%D7%A7%D7%A2%D7%95%D7%AA-%D7%90%D7%99%D7%A9%D7%99/",
+      "pageTitle": "דירות להשקעה – ליווי משקיעים עד הרווח",
+      "kind": "serp-snippet",
+      "markdown": "מהיום אנו נעמיד לרשותך מנהל ויועץ השקעות אישי ללא שום תשלום, אשר יבנה לך תיק השקעות אישי ואם אישורך ירכוש עבורך נכסים ו/או דירות להשקעה בעלות רווח ותשואה …"
+    },
+    {
+      "id": "portfolio-yield",
+      "sourceUrl": "https://www.caesar.co.il/%D7%97%D7%93%D7%A9-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%AA%D7%99%D7%A7-%D7%94%D7%A9%D7%A7%D7%A2%D7%95%D7%AA-%D7%9E%D7%91%D7%95%D7%A1%D7%A1-%D7%A0%D7%93%D7%9C%D7%9F-%D7%95%D7%A0%D7%99%D7%94%D7%95%D7%9C-2/",
+      "pageTitle": "דירות להשקעה, השקעות - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "קיסר ניהול נכסים בניה והשקעות – דירות להשקעה וניהול כל סוגי הנכסים ובניה מ א-ת למכירה והשכרה ללא תשלום בכל הארץ! אצלנו תקבל על הכסף שלך תשואה …"
+    },
+    {
+      "id": "projects-5-strategies",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%95%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D/",
+      "pageTitle": "שיווק פרויקטים חדשים למגורים - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "שאנו באים לשווק פרויקטים למגורים, ישנם 5 סוגי אסטרטגיות שיווק עיקריות: שיווק מהיר, שיווק מושך, שיווק ממוקד, שיווק יצירתי, שיווק כמו של המתחרים. לכל שיטה לשיווק …"
+    },
+    {
+      "id": "projects-toolkit",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%95%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D/",
+      "pageTitle": "שיווק פרויקטים חדשים למגורים - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "לחברת קיסר שיווק פרויקטים למגורים חדשים יש את היכולות לבחור מתוך סל הידע של הקבוצה בשיווק נדלן את הכלים הכי נכונים לכל פרויקט באופן שונה מכל פרויקט אחר, כך שהוא …"
+    },
+    {
+      "id": "projects-legal-name",
+      "sourceUrl": "https://www.caesar.co.il/%D7%97%D7%91%D7%A8%D7%94-%D7%9C%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%95%D7%AA-%D7%9C%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95/",
+      "pageTitle": "חברות שיווק פרויקטים בנדל\"ן - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר שיווק וניהול נכסים בע\"מ מתמחה בשיווק פרויקטים חדשים. אנו מציבים רף גבוה לכל חברה לשיווק פרויקטים חדשים ומזמינים אותך להתרשם משיטת …"
+    },
+    {
+      "id": "projects-audience-fit",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%99%D7%9A-%D7%91%D7%95%D7%97%D7%A8%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%94-%D7%9C%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D-%D7%9C/",
+      "pageTitle": "איך בוחרים חברה לשיווק פרויקטים חדשים למגורים?",
+      "kind": "serp-snippet",
+      "markdown": "הואיל והדירות חייבות להתאים לקהל היעד, המחירים חייבים להתאים לקהל היעד, המפרט חייב להתאים לקהל היעד המיקום חייב להתאים לקהל היעד וכו' קבלן או …"
+    },
+    {
+      "id": "sell-tips",
+      "sourceUrl": "https://www.caesar.co.il/%D7%94%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%94%D7%97%D7%A9%D7%95%D7%91%D7%99%D7%9D-%D7%9C%D7%9E%D7%9B%D7%99%D7%A8%D7%AA-%D7%93%D7%99%D7%A8%D7%94-%D7%91%D7%99%D7%A2%D7%99%D7%9C%D7%95%D7%AA-%D7%95%D7%9E/",
+      "pageTitle": "הטיפים החשובים למכירת דירה ביעילות ומהירות? ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "הצגת הדירה- מתווכים מקצועיים יודעים לזהות את תנודתיות שוק הנדל\"ן ומכוונים את הליך מכירת דירה לטובת בעל הנכס. · מו\"מ- מתווכי הדירות למכירה מנוסים …"
+    },
+    {
+      "id": "regions-counts",
+      "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/",
+      "pageTitle": "אזורי שירות, ניהול נכסים, ניהול דירות",
+      "kind": "body",
+      "markdown": "אזורי שירות, ניהול נכסים, ניהול דירות\n\nחפש נכס. בחר אזור.\nהכל · חיפה והצפון (92) · השרון והסביבה (41) · קיסריה והסביבה (23) · גוש דן והמרכז (99) · ירושליים והסביבה (16) · דרום (7)\n\nהשכרה או …",
+      "note": "Live listing counts per region on the property-search facet. Confirmed identically on the חברות-לניהול-נכסים page."
+    },
+    {
+      "id": "regions-counts-dup",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%95%D7%AA-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%94-%D7%9C/",
+      "pageTitle": "חברות לניהול נכסים | קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "חפש נכס. בחר אזור. הכל, חיפה והצפון (92), השרון והסביבה (41), קיסריה והסביבה (23), גוש דן והמרכז (99), ירושליים והסביבה (16), דרום (7). השכרה או …"
+    },
+    {
+      "id": "branch-haifa",
+      "sourceUrl": "https://www.caesar.co.il/agent/caesar/",
+      "pageTitle": "סניף קיסר ניהול נכסים בחיפה נשר קריות והצפון",
+      "kind": "body",
+      "markdown": "# סניף קיסר ניהול נכסים בחיפה נשר קריות והצפון\n\n### נכסים של הסוכן\n\n#### קיסר ניהול נכסים בחיפה מציע דירה להשקעה במיקום מבוקש מאוד עם מלא שוכרים במחיר קטן בחיפה\n225,000ש''ח\n, חיפה\n0 חדרים | 0 מקלחות | מכירה, השקעה\n\n#### קיסר ניהול נכסים דירות להשקעה בחיפה מציע דירות להשקעה בחיפה\nצור קשר לקבלת פרטים"
+    },
+    {
+      "id": "netanya-asset-types",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%93%D7%99/",
+      "pageTitle": "ניהול נכסים, דירות, מגדלים, מבנים, מרכזים שטחים, קניונים, מסחריים בנתניה",
+      "kind": "serp-snippet",
+      "markdown": "ניהול נכסים בנתניה: קיסר משווקת ומנהלת נכסים, דירות, נכסים מסחריים, קניונים, מבנים, מגדלי מגורים, מגדלי יוקרה, מרכזים מסחריים, בתי מלון, מגורים, …"
+    },
+    {
+      "id": "tlv-luxury",
+      "sourceUrl": "https://www.caesar.co.il/listing/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%91%D7%AA%D7%90-2/",
+      "pageTitle": "ניהול נכסים בתל אביב יוקרה",
+      "kind": "serp-snippet",
+      "markdown": "חברת קיסר שיווק וניהול נכסים בתל אביב ובישראל – הנה החברה האמינה המומלצת והמקצועית בישראל לניהול ושיווק כל סוגי הנכסים הבניינים, מגורי יוקרה, בתי יוקרה, דירות …"
+    },
+    {
+      "id": "t-survey-96",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%D7%91%D7%A1%D7%A7%D7%A8-%D7%97%D7%99%D7%A6%D7%95%D7%A0%D7%99-%D7%A9%D7%A0%D7%A2%D7%A8%D7%9A/",
+      "pageTitle": "בסקר חיצוני שנערך - קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "בסקר חיצוני שנערך ע\"פ חשבוניות ברצף זכתה קיסר בציון 9.6 בשקלול סופי, דבר המעיד על רמת שירות גבוהה.\nהארה: לאור העובדה כי חברתנו מתמחה בשירותי ניהול לטווח ארוך ולא לתיקון חד פעמי ציון זה נחשב לגבוה במיוחד.\nלהלן מס' חוות דעת המלצות מתוך הסקר:\n*ניתן לעיין בתוצאות הסקר המלא במשרדנו."
+    },
+    {
+      "id": "t-hayim",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%97%d7%99%d7%99%d7%9d-%d7%97%d7%9b%d7%9d/",
+      "pageTitle": "חיים חכם",
+      "kind": "testimonial",
+      "markdown": "\"חברה מצוינת, הם מנהלים עבורי מספר דירות שברשותי לצורך השכרה והם עושים עבודה טובה מאוד, אני נותן להם ציון עשר בכל הפרמטרים. מומלץ\".",
+      "note": "Attribution taken from the testimonial permalink slug (חיים-חכם)."
+    },
+    {
+      "id": "t-yael",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%99%d7%a2%d7%9c-%d7%92%d7%95%d7%a0%d7%9f-%d7%9e%d7%aa%d7%95%d7%9a-%d7%94%d7%a1%d7%a7%d7%a8/",
+      "pageTitle": "יעל גונן (מתוך הסקר)",
+      "kind": "testimonial",
+      "markdown": "\"חברה עם שירות יעיל, מקצועי ואמין. עשו עבודה מצוינת והיו בקשר רציף איתי לאורך כל הדרך. אני כבר המלצתי עליהם לחברים\".",
+      "note": "The ממליצים page also renders a second quote near יעל גונן's name — 'קיסר עושים עבודה קבועה ומתמשכת של ניהול הנכס ועד כה אני ממש מרוצה מקיסר, הם אדיבים, שירותיים ונראה גם שהם מקצועיים'. Which of the two belongs to her could not be resolved from search snippets."
+    },
+    {
+      "id": "t-yael-alt",
+      "sourceUrl": "https://www.caesar.co.il/%D7%9E%D7%9E%D7%9C%D7%99%D7%A6%D7%99%D7%9D/",
+      "pageTitle": "חברה לניהול נכסים מומלצת | קיסר ניהול נכסים",
+      "kind": "testimonial",
+      "markdown": "\"קיסר עושים עבודה קבועה ומתמשכת של ניהול הנכס ועד כה אני ממש מרוצה מקיסר, הם אדיבים, שירותיים ונראה גם שהם מקצועיים\". יעל גונן מתל אביב (מתוך הסקר)",
+      "note": "Ambiguous pairing — see note on t-yael."
+    },
+    {
+      "id": "t-anon",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%9c%d7%a7%d7%95%d7%97-%d7%a9%d7%90%d7%99%d7%a0%d7%95-%d7%9e%d7%95%d7%9b%d7%9f-%d7%9c%d7%97%d7%a9%d7%95%d7%a3-%d7%90%d7%aa-%d7%a9%d7%9e%d7%95-%d7%9e%d7%aa%d7%95%d7%9a-%d7%94%d7%a1%d7%a7%d7%a8-2/",
+      "pageTitle": "לקוח שאינו מוכן לחשוף את שמו (מתוך הסקר)",
+      "kind": "testimonial",
+      "markdown": "\"השירות מקסים, הם אדיבים ומקצועיים. אחלה שירות☺\""
+    },
+    {
+      "id": "t-lea",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%9c%d7%90%d7%94-%d7%90%d7%99%d7%a8%d7%9e%d7%a1%d7%a7%d7%95/",
+      "pageTitle": "לאה אירמסקו, חדרה",
+      "kind": "testimonial",
+      "markdown": "\"אני עובדת עם קיסר שש שנים. הוא מנהל לי את הנכסים בצורה המקצועית והטובה ביותר. הוא תמיד מתעניין ושומר על קשר רציף כל הזמן. בורכתי ביום שנפגשנו. ממליצה בחום לכל המעוניין\"",
+      "note": "Location 'חדרה' from the homepage testimonial carousel's location line."
+    },
+    {
+      "id": "t-brandes",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%99%d7%94%d7%95%d7%93%d7%94-%d7%95%d7%a2%d7%95%d7%a4%d7%a8%d7%94-%d7%91%d7%a8%d7%a0%d7%93%d7%a1/",
+      "pageTitle": "יהודה ועפרה ברנדס, ירושלים",
+      "kind": "testimonial",
+      "markdown": "\"השירות של קיסר הוגן, אדיב ויעיל.\nמאז שהחלו לטפל בנכסים שלנו – הוסרו מאיתנו כל הדאגות\".\nיהודה ועפרה ברנדס"
+    },
+    {
+      "id": "t-eyal",
+      "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%90%d7%99%d7%99%d7%9c-%d7%99%d7%a9%d7%a8%d7%90%d7%9c%d7%99-%d7%9e%d7%97%d7%99%d7%a4%d7%94/",
+      "pageTitle": "אייל ישראלי, חיפה",
+      "kind": "testimonial",
+      "markdown": "אייל ישראלי מחיפה (בחר לשלוח מכתב המלצה מוקלט בווצאפ)\n\"בכל מקרה תודה רבה אבי, חבל על הזמן. אם יש משהוא שיודע להוציא מים מסלע....\nאני כבר הייתי ממש מיואש מזה, ואתה נתת לי תקווה וכוחות. כל הכבוד אבי כל הכבוד...\"\nלהלן הלינק בקולו האישי: עבור >>",
+      "note": "'אבי' here is a named individual at Caesar; the site never states his role, so do not promote him to a title."
+    },
+    {
+      "id": "t-other-names",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "testimonial-index",
+      "markdown": "עליזה ודן שירן, תל-אביב · נתי ויינר, תל אביב",
+      "note": "Testimonial carousel entries whose quote text never came back in any snippet — names and locations only."
+    },
+    {
+      "id": "client-shevach-weiss",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "פרופסור שבח וייס הצטרף לחוג הלקוחות של קיסר ניהול נכסים בחיפה, מזל טוב!",
+      "note": "Named public-figure client, from the homepage news feed. Post links to /פרופסור-שבח-וייס-יור-הכנסת-לשעבר-הצטר/"
+    },
+    {
+      "id": "client-daniel-assayag",
+      "sourceUrl": "https://www.caesar.co.il/",
+      "pageTitle": "קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "דניאל אסייג הבן של הסטנדאפיסט שלום אסייג הצטרף לחוג הלקוחות של קיסר ניהול נכסים",
+      "note": "From archive/source/homepage-webscraper.csv row 78 — a homepage news headline."
+    },
+    {
+      "id": "contact-block",
+      "sourceUrl": "https://www.caesar.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/",
+      "pageTitle": "צור קשר - קיסר ניהול נכסים",
+      "kind": "serp-snippet",
+      "markdown": "טלפון ארצי: 1599-55-66-55. אישי: 052-5416-313\nפנייתכם חשובה לנו אנא השאירו …\nהנהלת קבוצת קיסר – ניהול נכסים, בניה ועסקים. החשמונאים 96 תל אביב\nסניפים: בפריסה ארצית"
+    },
+    {
+      "id": "contact-footer",
+      "sourceUrl": "https://www.caesar.co.il/search-results/page/20/",
+      "pageTitle": "חברה לניהול נכסים בישראל | קיסר ניהול נכסים - Part 20",
+      "kind": "serp-snippet",
+      "markdown": "הנהלת קבוצת קיסר – ניהול נכסים, בניה ועסקים. החשמונאים 96 תל אביב סניפים: בפריסה ארצית. 1599-55-66-55 | 052-5416313. Email. קיסר ברשתות חברתיות. ניהול נכסים …",
+      "note": "Site-wide footer."
+    },
+    {
+      "id": "english-page",
+      "sourceUrl": "https://www.caesar.co.il/english/",
+      "pageTitle": "Property management israel | קיסר ניהול נכסים",
+      "kind": "body",
+      "markdown": "# Property Management\n## About Caesar\n### 3. The business entrepreneurship and overboard and Israel's investment department\n\n[language switcher: עִבְרִית · العربية · 简体中文 · English · Français · Deutsch · Italiano · 日本語 · Русский · Español]",
+      "note": "The English page is a GTranslate shell with almost no original English body copy — heading 3 is a machine-translation artefact. Do not reuse this wording."
+    }
+  ],
+  "originalSiteImages": [
+    {
+      "id": "hero-azrieli",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2017/04/%D7%A7%D7%A0%D7%99%D7%95%D7%9F-%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D.jpg",
+      "caption": "קניון עזריאלי / מרכזים מסחריים",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tower-midtown",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2018/01/%D7%9E%D7%92%D7%93%D7%9C-%D7%9E%D7%99%D7%93%D7%98%D7%90%D7%95%D7%9F-500x350.jpg",
+      "caption": "מגדל מידטאון",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "shop-window",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2018/02/couple-looking-at-shop-window_1098-758-500x350.jpg",
+      "caption": "זוג מול חלון ראווה — ניהול קניונים ומרכזי קניות",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "offices-ptk",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2017/07/%D7%A9%D7%98%D7%97%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D-%D7%91%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D-%D7%9E%D7%A9%D7%A8%D7%93%D7%99%D7%9D-%D7%91%D7%A4%D7%AA%D7%97-%D7%AA%D7%A7%D7%95%D7%95%D7%94.jpg",
+      "caption": "שטחים מסחריים ובנייני משרדים בפתח תקווה",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tlv-management",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2017/09/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91.png",
+      "caption": "ניהול נכסים בתל אביב",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "bnei-brak",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2017/04/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%91%D7%A0%D7%99-%D7%91%D7%A8%D7%A7.png",
+      "caption": "ניהול נכסים בבני ברק",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "residential-complex",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2017/12/540774_3357307064092_598863415_n-500x350.jpg",
+      "caption": "מתחמי מגורים, דיור ונופש",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "kfar-saba",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2019/11/34534.jpg",
+      "caption": "ניהול נכסים בכפר סבא",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "building-2017",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2017/12/20171207_154745-500x350.jpg",
+      "caption": "בניין מנוהל — ניהול נכסים ואחזקת מבנים",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "franchise",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2016/02/F0_0645_0378_ezor3-500x350.jpg",
+      "caption": "זכיינות ברשת נדל\"ן",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "all-inclusive-tlv",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/05/121118258_c.jpg",
+      "caption": "שירות הכל כלול בתל אביב / מגדלי מגורי יוקרה",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-tama38",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%AA%D7%9E%D7%B4%D7%90-381.png",
+      "caption": "אייקון: ניהול תמ״א 38",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-complexes",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%9E%D7%AA%D7%97%D7%9E%D7%99%D7%9D-%D7%91%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%A9%D7%98%D7%97%D7%99%D7%9D1.png",
+      "caption": "אייקון: ניהול מתחמים, בניינים ושטחים",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-new-projects",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%95%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D.png",
+      "caption": "אייקון: ניהול ושיווק פרויקטים חדשים",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-investors",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%95%D7%9C%D7%99%D7%95%D7%95%D7%99-%D7%9E%D7%A9%D7%A7%D7%99%D7%A2%D7%99%D7%9D.png",
+      "caption": "אייקון: ניהול דירות להשקעה וליווי משקיעים",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-for-sale",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%9E%D7%9B%D7%99%D7%A8%D7%94.png",
+      "caption": "אייקון: ניהול נכסים למכירה",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-for-rent",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%A9%D7%9B%D7%A8%D7%94.png",
+      "caption": "אייקון: ניהול נכסים להשכרה",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-franchise",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%93%D7%A8%D7%95%D7%A9%D7%99%D7%9D-%D7%96%D7%9B%D7%99%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%A9%D7%95%D7%AA%D7%A4%D7%99%D7%9D-%D7%9C%D7%94%D7%A6%D7%9C%D7%97%D7%94.png",
+      "caption": "אייקון: דרושים זכיינים ושותפים להצלחה",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-business",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A7%D7%99%D7%93%D7%95%D7%9D-%D7%95%D7%9C%D7%99%D7%95%D7%95%D7%99-%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%95%D7%99%D7%96%D7%9E%D7%99%D7%9D.png",
+      "caption": "אייקון: ניהול קידום וליווי עסקים ויזמים",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-tlv-uplift",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%95%D7%A9%D7%93%D7%A8%D7%95%D7%92-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91.png",
+      "caption": "אייקון: ניהול ושדרוג נכסים בתל אביב",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-supervision",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%95%D7%A4%D7%99%D7%A7%D7%95%D7%97-%D7%91%D7%A0%D7%99%D7%941.png",
+      "caption": "אייקון: ניהול פרויקטים ופיקוח בניה",
+      "seenOn": "https://www.caesar.co.il/"
+    },
+    {
+      "id": "tile-pinuy-binuy",
+      "url": "http://www.caesar.co.il/wp-content/uploads/2015/10/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A4%D7%99%D7%A0%D7%95%D7%99-%D7%91%D7%99%D7%A0%D7%95%D7%991.png",
+      "caption": "אייקון: ניהול פינוי בינוי",
+      "seenOn": "https://www.caesar.co.il/"
+    }
+  ],
+  "coverageGaps": [
+    "זכיינים בקיסר (/agents/) — a franchise query returned zero results; the page is in the nav but no body copy was retrievable.",
+    "דרושים, מועדון לקוחות, קישורים שימושיים, קרן קיסר, מועדון משקיעים, קיסר בעסקים — nav-only, no body copy retrieved.",
+    "קיסר בתקשורת — the nav entry resolves to the שיווק-ניהול-נכסים-מסחריים slug; no press items were retrieved.",
+    "/english/ — a GTranslate shell with no substantive original English copy.",
+    "נכס החודש / פרויקט החודש / פרויקטים — titles only, no body copy.",
+    "Individual /listing/ records — only the boilerplate service list that repeats across every listing was retrievable; no per-property descriptions.",
+    "No named mall, centre or tower that Caesar actually manages was found anywhere. The Azrieli and Midtown photos are stock/illustrative usage on their site, not evidence of a mandate.",
+    "No employee names beyond 'אבי' (in one testimonial) and no CEO name; דבר המנכ\"ל is unsigned in every snippet returned."
+  ]
+}

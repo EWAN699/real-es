@@ -1,0 +1,755 @@
+{
+  "site": {
+    "name": "קיסר ניהול נכסים",
+    "locale": "he-IL",
+    "dir": "rtl",
+    "sourceUrl": "https://www.caesar.co.il/",
+    "tagline": "ניהול ואחזקת נכסים בפריסה ארצית",
+    "description": "קבוצת קיסר מתמחה בשיווק, ניהול והשבחה של כל סוגי הנכסים — למכירה, להשכרה או להשקעה — כולל מגורי יוקרה, מרכזים מסחריים, קניונים ואחזקת מבנים, בפריסה ארצית וללא דמי ניהול ועמלות תיווך.",
+    "contact": {
+      "phones": [
+        "1599-55-66-55",
+        "052-5416313"
+      ],
+      "emails": [
+        "info@caesar.co.il"
+      ],
+      "address": "החשמונאים 96, תל אביב",
+      "social": [
+        {
+          "platform": "facebook",
+          "href": "https://www.facebook.com/caesar.co.il"
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "slug": "/",
+      "title": "קיסר ניהול נכסים | ניהול ואחזקת נכסים בפריסה ארצית",
+      "metaDescription": "קיסר ניהול נכסים מנהלת מעל 300 נכסים מכל הסוגים בישראל — דירות להשכרה ולמכירה, נכסים מניבים, קניונים ומרכזים מסחריים — ללא דמי ניהול וללא עמלות תיווך.",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "order": 0,
+          "heading": "ניהול ואחזקת נכסים בפריסה ארצית",
+          "subheading": "כל שירות שתבחר יהיה מושלם וללא תשלום.",
+          "body": "מעל 300 נכסים מכל הסוגים, מנוהלים בהצלחה — ללא דמי ניהול וללא עמלות תיווך.",
+          "media": [
+            {
+              "id": "hero-loop",
+              "kind": "video",
+              "alt": "מפתח בודד מונח על שולחן עץ כהה במשרד, ומאחוריו השתקפות רכה של חזית בניין מגורים",
+              "poster": "/media/hero/hero-loop-poster.webp",
+              "origin": "placeholder"
+            }
+          ],
+          "cta": {
+            "label": "לייעוץ אישי ללא התחייבות",
+            "href": "tel:1599556655",
+            "style": "primary"
+          },
+          "motion": "text-split",
+          "provenance": {
+            "source": "rewritten",
+            "sourceUrl": "https://www.caesar.co.il/",
+            "note": "Heading and subheading are verbatim homepage strings (“תחומי ניהול בפריסה ארצית” / “ניהול ואחזקת נכסים” joined into one line, and the tile-grid closing line). Body stitches the harvested 300-properties and 0%-fees claims into one sentence."
+          }
+        },
+        {
+          "id": "about",
+          "type": "intro",
+          "order": 1,
+          "heading": "אודות קבוצת קיסר",
+          "body": "קבוצת קיסר – הנו מותג ידוע ומוכר בתחומו אשר נבנה במשך מעל עשר שנים. החברה מתמחה בתחום העסקים והנדל\"ן המלא: שיווק, ניהול והשבחה של כל סוגי הנכסים למכירה, להשכרה או להשקעה — מדירות פרטיות ובתי יוקרה, דרך מתחמי ומגורי יוקרה ומגדלי בנייני משרדים, ועד מרכזים מסחריים, שטחים ומבנים מסחריים ובתי מלון.",
+          "items": [
+            {
+              "id": "div-assets",
+              "title": "המחלקה לניהול נכסים",
+              "body": "ניהול, אחזקה ושיווק של כל סוגי הנכסים — למגורים ולמסחר — בפריסה ארצית.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/",
+                "note": "Division name verbatim. Body summarises the harvested service catalogue."
+              }
+            },
+            {
+              "id": "div-construction",
+              "title": "בניה־ניהול־יזמות",
+              "body": "ניהול תמ\"א 38 ופינוי בינוי, ניהול קבוצות בעלי זכויות, שיפוצים כלליים, ניהול פרויקטים ופיקוח בניה.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/",
+                "note": "Division name verbatim from the about page; sub-services listed verbatim from the site navigation."
+              }
+            },
+            {
+              "id": "div-ventures",
+              "title": "יזמות עסקים והשקעות",
+              "body": "קרן קיסר, מועדון משקיעים, וניהול קידום וליווי של עסקים ויזמים.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/",
+                "note": "Division name and sub-items are verbatim navigation labels; joined into a sentence."
+              }
+            }
+          ],
+          "media": [],
+          "motion": "fade-up",
+          "provenance": {
+            "source": "rewritten",
+            "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%94-%D7%95%D7%A2/",
+            "note": "First sentence verbatim from the about page. Second sentence merges two harvested self-descriptions (about-scope, ceo-letter) into one, removing repetition."
+          }
+        },
+        {
+          "id": "services",
+          "type": "services",
+          "order": 2,
+          "heading": "תחומי ניהול בפריסה ארצית",
+          "subheading": "כל שירות שתבחר יהיה מושלם וללא תשלום.",
+          "body": "",
+          "items": [
+            {
+              "id": "svc-rental",
+              "title": "ניהול נכסים להשכרה",
+              "body": "שירות מ-א' עד ת' לניהול הנכס שלך, ב-0% עמלות תיווך ודמי ניהול.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%A9%D7%9B%D7%A8%D7%94-%D7%94%D7%97%D7%91%D7%99%D7%9C%D7%94-%D7%A9%D7%9C%D7%A0%D7%95/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-sale",
+              "title": "ניהול נכסים למכירה",
+              "body": "איננו חברת תיווך אלא חברה לניהול נכסים — לקוחותינו אינם משלמים תיווך ו/או דמי ניהול.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%95%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-commercial",
+              "title": "ניהול ואחזקת נכסים ומבנים מסחריים",
+              "body": "ניהול ואחזקת מבנים ממוחשב ומתקדם, הכולל ליווי הנדסי, מחקרי ושיווקי — משלב הקרקע ועד להקמת המבנים או המרכזים המסחריים.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-malls",
+              "title": "ניהול קניונים ומרכזים מסחריים",
+              "body": "שיווק השטחים המסחריים ויצירת תמהיל נכון בקניון או במרכז המסחרי, לצד האחזקה השוטפת.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D-%D7%9E%D7%A8%D7%9B%D7%96/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-projects",
+              "title": "ניהול ושיווק פרויקטים חדשים",
+              "body": "חמש אסטרטגיות שיווק — מהיר, מושך, ממוקד, יצירתי, וכמו של המתחרים — והכלים הנכונים נבחרים לכל פרויקט בנפרד.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%95%D7%A9%D7%99%D7%95%D7%95%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-investors",
+              "title": "ליווי משקיעים עד הרווח",
+              "body": "מנהל ויועץ השקעות אישי, ללא תשלום, שבונה עבורך תיק השקעות אישי ורוכש נכסים באישורך.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%93%D7%99%D7%A8%D7%94-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%AA%D7%99%D7%A7-%D7%94%D7%A9%D7%A7%D7%A2%D7%95%D7%AA-%D7%90%D7%99%D7%A9%D7%99/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-tlv-uplift",
+              "title": "ניהול והשבחת נכסים בתל אביב",
+              "body": "חבילת ניהול והשבחה ללא תשלום, הכוללת שיפוץ, עיצוב אדריכלי וריהוט.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%94%D7%A9%D7%91%D7%97%D7%AA-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/",
+                "note": "Tile label verbatim from the homepage service grid; body condensed from the linked service page."
+              }
+            },
+            {
+              "id": "svc-tama38",
+              "title": "ניהול תמ\"א 38",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/"
+              }
+            },
+            {
+              "id": "svc-pinuy",
+              "title": "ניהול פינוי בינוי",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/"
+              }
+            },
+            {
+              "id": "svc-supervision",
+              "title": "ניהול פרויקטים ופיקוח בניה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/"
+              }
+            },
+            {
+              "id": "svc-business",
+              "title": "ניהול קידום וליווי עסקים ויזמים",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/"
+              }
+            }
+          ],
+          "media": [],
+          "motion": "horizontal-scroll",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/"
+          }
+        },
+        {
+          "id": "numbers",
+          "type": "stats",
+          "order": 3,
+          "heading": "מה שאפשר לבדוק",
+          "body": "",
+          "items": [
+            {
+              "id": "stat-properties",
+              "value": "300+",
+              "title": "נכסים מכל הסוגים",
+              "body": "מנהלת מעל 300 נכסים מכל הסוגים בהצלחה רבה.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%95%D7%9E%D7%97%D7%99%D7%9D-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94/"
+              }
+            },
+            {
+              "id": "stat-survey",
+              "value": "9.6",
+              "title": "בסקר חיצוני",
+              "body": "בסקר חיצוני שנערך ע\"פ חשבוניות ברצף זכתה קיסר בציון 9.6 בשקלול סופי, דבר המעיד על רמת שירות גבוהה.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/testimonials/%D7%91%D7%A1%D7%A7%D7%A8-%D7%97%D7%99%D7%A6%D7%95%D7%A0%D7%99-%D7%A9%D7%A0%D7%A2%D7%A8%D7%9A/"
+              }
+            },
+            {
+              "id": "stat-fees",
+              "value": "0%",
+              "title": "עמלות תיווך ודמי ניהול",
+              "body": "ללא דמי ניהול ו/או עמלות תיווך במכירה ובהשכרה.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/"
+              }
+            },
+            {
+              "id": "stat-availability",
+              "value": "24/7",
+              "title": "שירות ללקוחות",
+              "body": "קיסר מעניקה ללקוחותיה שירות מושלם 24/7 הכולל את כל הטיפולים הכרוכים בשיווק וטיפול בנכס.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A7%D7%99%D7%A1%D7%A8-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D-%D7%9E%D7%A0%D7%94%D7%9C%D7%AA-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/"
+              }
+            }
+          ],
+          "media": [],
+          "motion": "fade-up",
+          "provenance": {
+            "source": "authored",
+            "note": "Only the framing heading is authored — deliberately, because the site's own framing for these numbers is a superlative rather than a heading. Every figure and every item body underneath is harvested verbatim and carries its own sourceUrl."
+          }
+        },
+        {
+          "id": "method",
+          "type": "showcase",
+          "order": 4,
+          "heading": "שיטת Total management",
+          "body": "שיטת Total management, שהיא לדעת רבים שיטת הניהול המושלמת, מאפשרת לבעלי נכסים מניבים לרכז את כל השירותים שחשובים עבורם תחת קורת גג אחת.",
+          "items": [
+            {
+              "id": "method-lean",
+              "title": "ניהול מושלם, יצירתי, רזה, יעיל ומתקדם",
+              "body": "שיטת הניהול של קיסר מבוססת בין היתר על ניהול מושלם, יצירתי, רזה, יעיל, ומתקדם.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%95%D7%9E%D7%97%D7%99%D7%9D-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94/"
+              }
+            },
+            {
+              "id": "method-premium",
+              "title": "שירותי פרימיום תחת קורת גג אחת",
+              "body": "שירותי קונסיירז', פרסום ושיווק לקראת מכירה או השכרה, אחזקה וניקיון.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%95%D7%9E%D7%97%D7%99%D7%9D-%D7%9C%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%94%D7%97%D7%91%D7%A8%D7%94/"
+              }
+            },
+            {
+              "id": "method-engineering",
+              "title": "ליווי הנדסי משלב הקרקע",
+              "body": "ליווי הנדסי, מחקרי ושיווקי החל משלב הקרקע ועד לשלב הקמת המבנים או המרכזים המסחריים, ע\"פ אפיון.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D/",
+                "note": "Trimmed from a longer run-on sentence on the commercial page."
+              }
+            },
+            {
+              "id": "method-headache",
+              "title": "בלי כאבי ראש לבעל הנכס",
+              "body": "ההתמחות של קיסר היא להוריד את כל כאבי הראש מבעל הנכס ולבצע את כל הניהול של הנכס במקצועיות ובשלמות, במקום בעל הנכס וללא שום תשלום.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%94-%D7%95%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%98%D7%95%D7%91%D7%99%D7%9D-%D7%94%D7%A9%D7%A0%D7%99%D7%99%D7%9D-%D7%9E%D7%99%D7%9F-%D7%94%D7%90/"
+              }
+            }
+          ],
+          "media": [
+            {
+              "id": "method-concourse",
+              "kind": "image",
+              "alt": "מבט מלמעלה על רחבת קניון מוארת, שבה תנועת הקונים מסמנת את תמהיל החנויות",
+              "origin": "placeholder"
+            },
+            {
+              "id": "method-existing-mall",
+              "kind": "image",
+              "alt": "מרכז מסחרי גדול בשעות הערב — תצלום מהאתר הקיים של קיסר",
+              "src": "http://www.caesar.co.il/wp-content/uploads/2017/04/%D7%A7%D7%A0%D7%99%D7%95%D7%9F-%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%9E%D7%A1%D7%97%D7%A8%D7%99%D7%99%D7%9D.jpg",
+              "origin": "original-site",
+              "credit": "מתוך אתר קיסר הקיים. לא אומת שקיסר מנהלת את הנכס שבתמונה — לאשר מול הלקוח לפני שימוש."
+            }
+          ],
+          "motion": "pin-reveal",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9E%D7%A0%D7%99%D7%91%D7%99%D7%9D-%D7%9C%D7%9A-%D7%99%D7%95%D7%AA%D7%A8-%D7%91%D7%A9%D7%99%D7%98%D7%AA-%D7%94%D7%9E%D7%95%D7%A9%D7%9C%D7%9E%D7%AA/"
+          }
+        },
+        {
+          "id": "coverage",
+          "type": "coverage",
+          "order": 5,
+          "heading": "אזורי שירות",
+          "subheading": "סניפים: בפריסה ארצית",
+          "body": "מספר הנכסים המוצגים כרגע בכל אזור:",
+          "items": [
+            {
+              "id": "cov-gush-dan",
+              "title": "גוש דן והמרכז",
+              "value": "99",
+              "location": "גוש דן והמרכז",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+              }
+            },
+            {
+              "id": "cov-haifa",
+              "title": "חיפה והצפון",
+              "value": "92",
+              "location": "חיפה והצפון",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+              }
+            },
+            {
+              "id": "cov-sharon",
+              "title": "השרון והסביבה",
+              "value": "41",
+              "location": "השרון והסביבה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+              }
+            },
+            {
+              "id": "cov-caesarea",
+              "title": "קיסריה והסביבה",
+              "value": "23",
+              "location": "קיסריה והסביבה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+              }
+            },
+            {
+              "id": "cov-jerusalem",
+              "title": "ירושליים והסביבה",
+              "value": "16",
+              "location": "ירושליים והסביבה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+              }
+            },
+            {
+              "id": "cov-south",
+              "title": "דרום",
+              "value": "7",
+              "location": "דרום",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+              }
+            },
+            {
+              "id": "cov-branch-haifa",
+              "title": "סניף קיסר ניהול נכסים בחיפה, נשר, קריות והצפון",
+              "location": "חיפה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/agent/caesar/"
+              }
+            },
+            {
+              "id": "cov-cities",
+              "title": "ערים עם עמוד שירות ייעודי",
+              "body": "תל אביב · יפו · חיפה · ירושלים · נתניה · הרצליה · רמת גן · כפר סבא · ראשון לציון · בת ים · אשדוד · הקריות · בני ברק · פתח תקווה · רעננה · גבעתיים · הוד השרון · מודיעין · קריית אונו · חדרה · רמת השרון · קיסריה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/",
+                "note": "City names taken verbatim from the per-city page titles captured in archive/source/homepage-webscraper.csv, which is a scrape of this URL."
+              }
+            }
+          ],
+          "media": [],
+          "motion": "fade-up",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%96%D7%95%D7%A8%D7%99-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA/"
+          }
+        },
+        {
+          "id": "package",
+          "type": "process",
+          "order": 6,
+          "heading": "מה החבילה שלנו כוללת",
+          "subheading": "שיווק וניהול כל סוגי הנכסים בכל הארץ: השכרה ומכירה ללא דמי ניהול ועמלות תיווך",
+          "body": "למה כדאי לקחת חברה לניהול נכסים? ולמה דווקא אנחנו? כי אצלנו אתה מקבל שירות מ-א' עד ת', הכולל את הטיפול הטוב ביותר לניהול הנכס שלך.",
+          "items": [
+            {
+              "id": "step-valuation",
+              "title": "הערכת שווי ללא תשלום",
+              "body": "מלא את הטופס, צרף תמונה, ונציגנו ישוב אליך בהקדם עם הערכת שווי של נכסך. ללא שום התחייבות.",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A8%D7%95%D7%A6%D7%94-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9B%D7%9E%D7%94-%D7%94%D7%93%D7%99%D7%A8%D7%94-%D7%A9%D7%9C%D7%9A-%D7%A9%D7%95%D7%95%D7%94/"
+              }
+            },
+            {
+              "id": "step-marketing",
+              "title": "שיווק ופרסום הנכס",
+              "body": "שיווק ופרסום של הדירה, והכנתה להשכרה או למכירה עתידית.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%97%D7%99%D7%A4%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%91/",
+                "note": "Condensed from the Haifa page's run-on service list."
+              }
+            },
+            {
+              "id": "step-uplift",
+              "title": "שיפוץ, עיצוב והשבחה",
+              "body": "שירות של שיפוץ ועיצוב הדירה, כולל עיצוב אדריכלי וריהוט.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%97%D7%99%D7%A4%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%91/",
+                "note": "Merges the Haifa service list with the Tel Aviv uplift package copy."
+              }
+            },
+            {
+              "id": "step-tenants",
+              "title": "איתור שוכרים וניהול היחסים איתם",
+              "body": "מנהל נכסים מקצועי אשר מחזיק בניסיון יודע כיצד לשמור על יחסים טובים עם השוכרים.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%9B%D7%9C-%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%97%D7%A9%D7%91%D7%AA-%D7%9C%D7%A9%D7%90%D7%95%D7%9C/",
+                "note": "Trimmed from a longer sentence on the building-maintenance FAQ page."
+              }
+            },
+            {
+              "id": "step-collection",
+              "title": "גביית שכר דירה וחשבונות",
+              "body": "להסדיר את תשלומי שכר הדירה והחשבונות ולוודא שהנכס עומד בכל הנדרש.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%9B%D7%9C-%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%97%D7%A9%D7%91%D7%AA-%D7%9C%D7%A9%D7%90%D7%95%D7%9C/",
+                "note": "Second half of the same sentence, split for the step list."
+              }
+            },
+            {
+              "id": "step-guarding",
+              "title": "שמירה על הנכס",
+              "body": "שירותי שמירה על הדירה — גם כשהיא עומדת ריקה.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%91%D7%97%D7%99%D7%A4%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%93%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%94-%D7%91/",
+                "note": "Service named verbatim; the vacant-property clause comes from the harvested “ניהול נכסים פנויים” catalogue entry."
+              }
+            }
+          ],
+          "media": [
+            {
+              "id": "package-before-after",
+              "kind": "image",
+              "alt": "סלון דירה מצולם מאותה נקודה לפני ואחרי שיפוץ, עם תפר אנכי חד בין שני המצבים",
+              "origin": "placeholder"
+            }
+          ],
+          "motion": "pin-reveal",
+          "provenance": {
+            "source": "rewritten",
+            "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%A9%D7%9B%D7%A8%D7%94-%D7%94%D7%97%D7%91%D7%99%D7%9C%D7%94-%D7%A9%D7%9C%D7%A0%D7%95/",
+            "note": "Heading and subheading verbatim from the package page. Body merges its two adjacent rhetorical questions with the opening of the answer, dropping the site's exclamation marks."
+          }
+        },
+        {
+          "id": "testimonials",
+          "type": "testimonials",
+          "order": 7,
+          "heading": "מה הלקוחות אומרים עלינו",
+          "body": "בסקר חיצוני שנערך ע\"פ חשבוניות ברצף זכתה קיסר בציון 9.6 בשקלול סופי, דבר המעיד על רמת שירות גבוהה. הארה: לאור העובדה כי חברתנו מתמחה בשירותי ניהול לטווח ארוך ולא לתיקון חד פעמי ציון זה נחשב לגבוה במיוחד.",
+          "items": [
+            {
+              "id": "t-brandes",
+              "title": "הוסרו מאיתנו כל הדאגות",
+              "body": "“השירות של קיסר הוגן, אדיב ויעיל. מאז שהחלו לטפל בנכסים שלנו – הוסרו מאיתנו כל הדאגות.”",
+              "attribution": "יהודה ועפרה ברנדס",
+              "location": "ירושלים",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%99%d7%94%d7%95%d7%93%d7%94-%d7%95%d7%a2%d7%95%d7%a4%d7%a8%d7%94-%d7%91%d7%a8%d7%a0%d7%93%d7%a1/"
+              }
+            },
+            {
+              "id": "t-lea",
+              "title": "שש שנים יחד",
+              "body": "“אני עובדת עם קיסר שש שנים. הוא מנהל לי את הנכסים בצורה המקצועית והטובה ביותר. הוא תמיד מתעניין ושומר על קשר רציף כל הזמן. בורכתי ביום שנפגשנו. ממליצה בחום לכל המעוניין.”",
+              "attribution": "לאה אירמסקו",
+              "location": "חדרה",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%9c%d7%90%d7%94-%d7%90%d7%99%d7%a8%d7%9e%d7%a1%d7%a7%d7%95/"
+              }
+            },
+            {
+              "id": "t-hayim",
+              "title": "ציון עשר בכל הפרמטרים",
+              "body": "“חברה מצוינת, הם מנהלים עבורי מספר דירות שברשותי לצורך השכרה והם עושים עבודה טובה מאוד, אני נותן להם ציון עשר בכל הפרמטרים. מומלץ.”",
+              "attribution": "חיים חכם",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%97%d7%99%d7%99%d7%9d-%d7%97%d7%9b%d7%9d/",
+                "note": "Attribution taken from the testimonial permalink slug; the site does not print it beside the quote."
+              }
+            },
+            {
+              "id": "t-yael",
+              "title": "בקשר רציף לאורך כל הדרך",
+              "body": "“חברה עם שירות יעיל, מקצועי ואמין. עשו עבודה מצוינת והיו בקשר רציף איתי לאורך כל הדרך. אני כבר המלצתי עליהם לחברים.”",
+              "attribution": "יעל גונן (מתוך הסקר)",
+              "location": "תל אביב",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%99%d7%a2%d7%9c-%d7%92%d7%95%d7%a0%d7%9f-%d7%9e%d7%aa%d7%95%d7%9a-%d7%94%d7%a1%d7%a7%d7%a8/",
+                "note": "The ממליצים page renders a second quote adjacent to this name; the pairing could not be resolved from search snippets. Confirm with the client before publishing."
+              }
+            },
+            {
+              "id": "t-anon",
+              "title": "אדיבים ומקצועיים",
+              "body": "“השירות מקסים, הם אדיבים ומקצועיים. אחלה שירות.”",
+              "attribution": "לקוח שאינו מוכן לחשוף את שמו (מתוך הסקר)",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/testimonials/%d7%9c%d7%a7%d7%95%d7%97-%d7%a9%d7%90%d7%99%d7%a0%d7%95-%d7%9e%d7%95%d7%9b%d7%9f-%d7%9c%d7%97%d7%a9%d7%95%d7%a3-%d7%90%d7%aa-%d7%a9%d7%9e%d7%95-%d7%9e%d7%aa%d7%95%d7%9a-%d7%94%d7%a1%d7%a7%d7%a8-2/"
+              }
+            }
+          ],
+          "media": [],
+          "motion": "fade-up",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/testimonials/%D7%91%D7%A1%D7%A7%D7%A8-%D7%97%D7%99%D7%A6%D7%95%D7%A0%D7%99-%D7%A9%D7%A0%D7%A2%D7%A8%D7%9A/",
+            "note": "Heading verbatim from the homepage carousel; body verbatim from the survey testimonial."
+          }
+        },
+        {
+          "id": "faq",
+          "type": "faq",
+          "order": 8,
+          "heading": "ניהול נכסים ודירות — שאלות ותשובות",
+          "body": "",
+          "items": [
+            {
+              "id": "faq-brokerage",
+              "title": "יש לי דירה למכירה — האם אני משלמת תיווך?",
+              "body": "לשמחתי איננו חברת תיווך אלא חברה לניהול נכסים, ולקוחותינו אינם משלמים תיווך ו/או דמי ניהול.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%95%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA/",
+                "note": "Question and answer verbatim; the site's triple question marks and the second question in the same line were removed."
+              }
+            },
+            {
+              "id": "faq-what-included",
+              "title": "מה כוללים שירותיהם של מנהלי נכסים?",
+              "body": "מנהל נכסים מקצועי אשר מחזיק בניסיון יודע כיצד לשמור על יחסים טובים עם השוכרים, להסדיר את תשלומי שכר הדירה והחשבונות, ולוודא שהנכס עומד בכל הנדרש.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%9B%D7%9C-%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%97%D7%A9%D7%91%D7%AA-%D7%9C%D7%A9%D7%90%D7%95%D7%9C/",
+                "note": "Question verbatim from the building-maintenance FAQ; the answer is the adjacent harvested paragraph from the same page, lightly trimmed. It is that page's answer, but the pairing is mine."
+              }
+            },
+            {
+              "id": "faq-all-same",
+              "title": "האם השירותים של כל מנהלי הנכסים דומים?",
+              "body": "לא. יש עשרה סימנים שמעידים שכדאי להחליף את מנהל הנכסים שלכם — ויש דרך לזהות מנהל נכסים חאפר.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%91%D7%91%D7%A2%D7%9C%D7%95%D7%AA%D7%9B%D7%9D-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%90%D7%AA%D7%9D-%D7%97%D7%99%D7%99%D7%91%D7%99%D7%9D-%D7%9C%D7%94%D7%97%D7%9C%D7%99%D7%A3-%D7%90%D7%AA-%D7%94%D7%97/",
+                "note": "Question verbatim from the maintenance FAQ; the answer is compressed from the harvested title and lede of the “עשרת הסימנים” article, which is a different page."
+              }
+            },
+            {
+              "id": "faq-mall-fee",
+              "title": "כמה עולה ניהול קניון?",
+              "body": "העלות משתנה על פי השירותים הכלולים ואופי הקניון. ישנם מנהלי נכסים אשר גובים עד לכ-15% כדמי ניהול קניון.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A7%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D/",
+                "note": "Question is the page's own framing; the answer is verbatim, trimmed."
+              }
+            },
+            {
+              "id": "faq-valuation",
+              "title": "אפשר לדעת כמה הנכס שלי שווה?",
+              "body": "כן, וללא תשלום. מלא את הטופס, צרף תמונה, ונציגנו ישוב אליך בהקדם עם הערכת שווי של נכסך — ללא שום התחייבות.",
+              "provenance": {
+                "source": "rewritten",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A8%D7%95%D7%A6%D7%94-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9B%D7%9E%D7%94-%D7%94%D7%93%D7%99%D7%A8%D7%94-%D7%A9%D7%9C%D7%9A-%D7%A9%D7%95%D7%95%D7%94/",
+                "note": "Answer verbatim from the valuation page; the question is a rephrasing of that page's own headline."
+              }
+            }
+          ],
+          "media": [],
+          "motion": "fade-up",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D/%D7%A0%D7%99%D7%94%D7%95%D7%9C-%D7%A0%D7%9B%D7%A1%D7%99%D7%9D-%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%95%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA/",
+            "note": "Heading is the FAQ page's own title, with the pipe removed."
+          }
+        },
+        {
+          "id": "consult",
+          "type": "cta",
+          "order": 9,
+          "heading": "לייעוץ אישי ללא התחייבות",
+          "body": "או מלא/י את פרטייך וניצור עימך קשר בהקדם.",
+          "media": [
+            {
+              "id": "consult-dusk",
+              "kind": "image",
+              "alt": "בניין מגורים בשעת דמדומים, חלק מחלונותיו מוארים",
+              "origin": "placeholder"
+            }
+          ],
+          "cta": {
+            "label": "1599-55-66-55",
+            "href": "tel:1599556655",
+            "style": "primary"
+          },
+          "motion": "parallax-slow",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/"
+          }
+        },
+        {
+          "id": "contact",
+          "type": "contact",
+          "order": 10,
+          "heading": "צור קשר",
+          "subheading": "פנייתכם חשובה לנו",
+          "body": "הנהלת קבוצת קיסר – ניהול נכסים, בניה ועסקים. החשמונאים 96 תל אביב. סניפים: בפריסה ארצית.",
+          "items": [
+            {
+              "id": "contact-national",
+              "title": "טלפון ארצי",
+              "body": "1599-55-66-55",
+              "href": "tel:1599556655",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/"
+              }
+            },
+            {
+              "id": "contact-direct",
+              "title": "אישי",
+              "body": "052-5416-313",
+              "href": "tel:0525416313",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/"
+              }
+            },
+            {
+              "id": "contact-email",
+              "title": "דוא\"ל",
+              "body": "info@caesar.co.il",
+              "href": "mailto:info@caesar.co.il",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/"
+              }
+            },
+            {
+              "id": "contact-address",
+              "title": "כתובת",
+              "body": "החשמונאים 96, תל אביב",
+              "location": "תל אביב",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/"
+              }
+            },
+            {
+              "id": "contact-facebook",
+              "title": "פייסבוק",
+              "body": "קיסר שיווק נדל\"ן, ניהול נכסים מניבים, אחזקת מבנים קניונים מרכזים מסחריים",
+              "href": "https://www.facebook.com/caesar.co.il",
+              "provenance": {
+                "source": "harvested",
+                "sourceUrl": "https://www.caesar.co.il/"
+              }
+            }
+          ],
+          "media": [],
+          "motion": "fade-up",
+          "provenance": {
+            "source": "harvested",
+            "sourceUrl": "https://www.caesar.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/"
+          }
+        }
+      ]
+    }
+  ]
+}

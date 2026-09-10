@@ -1,7 +1,32 @@
+# dependencies
 node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# build output
 dist/
 build/
+
+# environment — never commit real secrets
 .env
-.env.local
+.env.*
+!.env.example
+
+# playwright
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+screenshots/
+
+# media sources (originals are large; shipped derivatives live in public/media/)
+assets/source/
+
+# misc
 *.log
 .DS_Store
+*.tsbuildinfo
+.vercel
